@@ -12,8 +12,6 @@ http.listen(3000, () => {
 });
 
 app.use(express.static(path.join(__dirname, '/build')));
-
-// 메인페이지 접속 시 build 폴더의 index.html 보내줘
 app.get('/', (res, req) => {
   req.sendFile(path.join(__dirname, '/build/index.html'));
 })

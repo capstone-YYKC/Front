@@ -42,7 +42,8 @@ import React, {useState, useCallback} from "react";
 import DiaryCheckPopup from "../components/DiaryCheckPopup";
 import PortalPopup from "../components/PortalPopup";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
+import axios from 'axios'
+import { useEffect } from 'react';
 
 
 const Main = () => {
@@ -55,34 +56,66 @@ const Main = () => {
     setDiaryCheckPopupOpen(false);
   }, []);
 
+  const [date0, setdate0] = useState([]);
+  const [date1, setdate1] = useState([]);
+  const [date2, setdate2] = useState([]);
+  const [date3, setdate3] = useState([]);
+  const [date4, setdate4] = useState([]);
+  const [date5, setdate5] = useState([]);
+  const [date6, setdate6] = useState([]);
+  
+
+  const userToken = localStorage.getItem("userToken");
+  console.log('토큰', userToken);
+
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/diarys', {
+      headers: {
+        'x-access-token': userToken
+      }
+    })
+        .then(response => {
+          console.log('일기 정보', response.data)
+          setdate0(response.data[0].emotionScore);
+          setdate1(response.data[1].emotionScore);
+          setdate2(response.data[2].emotionScore);
+          setdate3(response.data[3].emotionScore);
+          setdate4(response.data[4].emotionScore);
+          setdate5(response.data[5].emotionScore);
+          setdate6(response.data[6].emotionScore);
+        });
+  }, []);
+
+
   const data = [
     {
       day: "5/19",
-      감정점수: 25
+      감정점수: date0
     },
     {
       day: "5/20",
-      감정점수: 0
+      감정점수: date1
     },
     {
       day: "5/21",
-      감정점수: 15
+      감정점수: date2
     },
     {
       day: "5/22",
-      감정점수: -10
+      감정점수: date3
     },
     {
       day: "5/23",
-      감정점수: -20
+      감정점수: date4
     },
     {
       day: "5/24",
-      감정점수: 10
+      감정점수: date5
     },
     {
       day: "5/25",
-      감정점수: 20
+      감정점수: date6
     }
   ];
 
