@@ -1,8 +1,9 @@
 import { useMemo } from "react";
 import styles from "./Day24Icon.module.css";
-import React, {useState, useCallback} from "react";
+import React, {useState, useCallback, useEffect} from "react";
 import DiaryCheckPopup from "../components/DiaryCheckPopup";
 import PortalPopup from "../components/PortalPopup";
+import axios from 'axios';
 
 const Day24Icon = ({ propTop, propLeft }) => {
   const [isDiaryCheckPopupOpen, setDiaryCheckPopupOpen] = useState(false);
@@ -12,6 +13,43 @@ const Day24Icon = ({ propTop, propLeft }) => {
   const closeDiaryCheckPopup = useCallback(() => {
     setDiaryCheckPopupOpen(false);
   }, []);
+
+  const userToken = localStorage.getItem("userToken");
+  //기분에 따른 색상 변화
+  const [imageSrc, setImageSrc]=useState('/day24.svg');
+
+
+  useEffect(() => {
+    async function fetchData() {
+      axios.get('http://localhost:3000/diarys', {
+        headers: {
+          'x-access-token': userToken
+        }
+      })
+          .then(response => {
+            const mood = response.data[5].emotionStatus;
+            //1: 슬픔, 2: 기쁨, 3: 화남
+            switch(mood){
+              case '슬픔':
+                setImageSrc('/day241.svg');
+                break;
+              case '행복':
+                setImageSrc('/day242.svg');
+                break;
+              case '화남':
+                setImageSrc('/day243.svg');
+                break;
+              default:
+                setImageSrc('/day24.svg');
+            }
+          }
+        );
+
+    }
+
+    fetchData();
+  }, []);
+
   const day24IconStyle = useMemo(() => {
     return {
       top: propTop,
@@ -24,7 +62,7 @@ const Day24Icon = ({ propTop, propLeft }) => {
       <img
         className={styles.day24Icon}
         alt=""
-        src="/day24.svg"
+        src={imageSrc}
         style={day24IconStyle}
         onClick={openDiaryCheckPopup}
       />
