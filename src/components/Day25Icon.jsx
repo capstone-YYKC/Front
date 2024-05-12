@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import styles from "./Day25Icon.module.css";
 import React, {useState, useCallback, useEffect} from "react";
-import DiaryCheckPopup from "../components/DiaryCheckPopup";
+import DiaryCheckPopup from "../components/DiaryCheckPopup_7";
 import PortalPopup from "../components/PortalPopup";
 import axios from 'axios';
 

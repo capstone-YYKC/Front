@@ -4,8 +4,10 @@
   left: 240px;
   white-space: pre-wrap;
 }
+
 .diaryCheckPopupChild,
-.diaryCheckPopupItem {
+.content
+{
   position: relative;
   top: 40px;
   left: 40px;
@@ -13,27 +15,44 @@
   background-color: var(--color-snow-100);
   width: 538px;
   height: 483px;
+  z-index: 0;
 }
+.content{
+  position: absolute;
+  top: 140px;
+  left: 40px;
+  height: 396px;
+  width: 518px;
+  background-color: var(--color-snow-100);
+  z-index: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
 .diaryCheckPopupItem {
+  position: relative;
   top: 60px;
+  left: 40px;
   border-radius: 0 0 var(--br-3xs) var(--br-3xs);
   background-color: var(--color-gray);
+  width: 538px;
   height: 160px;
 }
 .diaryCheckPopupInner {
   position: relative;
   top: -590px;
-  left: 99px;
+  left: 62px;
   border-radius: var(--br-3xs);
   background-color: #d1c7b1;
-  width: 420px;
+  width: 493px;
   height: 47px;
 }
 .div1 {
   position: relative;
   top: -630px;
-  left: 286px;
+  left: 0px;
   color: var(--color-dimgray-300);
+  text-align: center;
 }
 .polygonIcon {
   top: 21px;

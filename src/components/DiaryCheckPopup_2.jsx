@@ -1,11 +1,11 @@
-import styles from "./DiaryCheckPopup.module.css";
+import styles from "./DiaryCheckPopup_2.module.css";
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 
 const DiaryCheckPopup = () => {
   return (
     <div className={styles.diaryCheckPopup}>
-      <div className={styles.div}>5월   일 일기</div>
+      <div className={styles.div}>5월 20일 일기</div>
       <div className={styles.diaryCheckPopupChild} />
       <div className={styles.diaryCheckPopupItem} />
       <div className={styles.diaryCheckPopupInner} />

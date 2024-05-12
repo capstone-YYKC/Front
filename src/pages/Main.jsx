@@ -38,23 +38,13 @@ import Day3Icon2 from "../components/Day3Icon";
 import Day2Icon2 from "../components/Day2Icon";
 import Day1Icon2 from "../components/Day1Icon";
 import styles from "./Main.module.css";
-import React, {useState, useCallback} from "react";
-import DiaryCheckPopup from "../components/DiaryCheckPopup";
-import PortalPopup from "../components/PortalPopup";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React, {useState} from "react";
+import { LineChart, Line, XAxis,Tooltip, Legend} from 'recharts';
 import axios from 'axios'
 import { useEffect } from 'react';
 
 
 const Main = () => {
-  //일기 기록칸 오픈, 클로즈
-  const [isDiaryCheckPopupOpen, setDiaryCheckPopupOpen] = useState(false);
-  const openDiaryCheckPopup = useCallback(() => {
-    setDiaryCheckPopupOpen(true);
-  }, []);
-  const closeDiaryCheckPopup = useCallback(() => {
-    setDiaryCheckPopupOpen(false);
-  }, []);
 
   const [date0, setdate0] = useState([]);
   const [date1, setdate1] = useState([]);
@@ -190,27 +180,27 @@ const Main = () => {
           <Day16Icon propTop="364px" propLeft="360px" />
           <Day17Icon propTop="364px" propLeft="441px" />
           <Day18Icon propTop="364px" propLeft="522px" />
-          <Day19Icon propTop="460px" propLeft="36px" onClick={openDiaryCheckPopup}/>
-          <Day20Icon propTop="460px" propLeft="117px" onClick={openDiaryCheckPopup}/>
-          <Day21Icon propTop="460px" propLeft="198px" onClick={openDiaryCheckPopup}/>
-          <Day22Icon propTop="460px" propLeft="279px" onClick={openDiaryCheckPopup}/>
-          <Day23Icon propTop="460px" propLeft="360px" onClick={openDiaryCheckPopup}/>
-          <Day24Icon propTop="460px" propLeft="441px" onClick={openDiaryCheckPopup}/>
-          <Day25Icon propTop="460px" propLeft="522px" onClick={openDiaryCheckPopup}/>
-          <Day26Icon propTop="557px" propLeft="36px" onClick={openDiaryCheckPopup}/>
-          <Day27Icon propTop="557px" propLeft="117px" onClick={openDiaryCheckPopup}/>
-          <Day28Icon propTop="557px" propLeft="198px" onClick={openDiaryCheckPopup}/>
-          <Day29Icon propTop="557px" propLeft="279px" onClick={openDiaryCheckPopup}/>
-          <Day30Icon propTop="557px" propLeft="360px" onClick={openDiaryCheckPopup}/>
-          <Day31Icon propTop="557px" propLeft="441px" onClick={openDiaryCheckPopup}/>
-          <Day1Icon2 propTop="557px" propLeft="522px" onClick={openDiaryCheckPopup} />          
-          <Day2Icon2 propTop="653px" propLeft="36px" onClick={openDiaryCheckPopup}/>
-          <Day3Icon2 propTop="653px" propLeft="117px" onClick={openDiaryCheckPopup}/>
-          <Day4Icon2 propTop="653px" propLeft="198px" onClick={openDiaryCheckPopup}/>
-          <Day5Icon2 propTop="653px" propLeft="279px" onClick={openDiaryCheckPopup}/>
-          <Day6Icon2 propTop="653px" propLeft="360px" onClick={openDiaryCheckPopup}/>
-          <Day7Icon2 propTop="653px" propLeft="441px" onClick={openDiaryCheckPopup}/>
-          <Day8Icon2 propTop="653px" propLeft="522px" onClick={openDiaryCheckPopup}/>
+          <Day19Icon propTop="460px" propLeft="36px" />
+          <Day20Icon propTop="460px" propLeft="117px" />
+          <Day21Icon propTop="460px" propLeft="198px" />
+          <Day22Icon propTop="460px" propLeft="279px" />
+          <Day23Icon propTop="460px" propLeft="360px" />
+          <Day24Icon propTop="460px" propLeft="441px" />
+          <Day25Icon propTop="460px" propLeft="522px"/>
+          <Day26Icon propTop="557px" propLeft="36px" />
+          <Day27Icon propTop="557px" propLeft="117px" />
+          <Day28Icon propTop="557px" propLeft="198px" />
+          <Day29Icon propTop="557px" propLeft="279px" />
+          <Day30Icon propTop="557px" propLeft="360px" />
+          <Day31Icon propTop="557px" propLeft="441px" />
+          <Day1Icon2 propTop="557px" propLeft="522px" />          
+          <Day2Icon2 propTop="653px" propLeft="36px" />
+          <Day3Icon2 propTop="653px" propLeft="117px" />
+          <Day4Icon2 propTop="653px" propLeft="198px" />
+          <Day5Icon2 propTop="653px" propLeft="279px" />
+          <Day6Icon2 propTop="653px" propLeft="360px" />
+          <Day7Icon2 propTop="653px" propLeft="441px" />
+          <Day8Icon2 propTop="653px" propLeft="522px" />
           <div className={styles.div23}>일</div>
           <div className={styles.div24}>토</div>
           <div className={styles.div25}>금</div>
@@ -248,15 +238,6 @@ const Main = () => {
           </LineChart>
         </div>
       </div>
-      {isDiaryCheckPopupOpen && (
-        <PortalPopup
-          overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="Centered"
-          onOutsideClick={closeDiaryCheckPopup}
-        >
-          <DiaryCheckPopup onClose={closeDiaryCheckPopup} />
-        </PortalPopup>
-      )}
     </>
   );
 };

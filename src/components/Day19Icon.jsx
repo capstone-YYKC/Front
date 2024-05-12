@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import styles from "./Day19Icon.module.css";
 import React, {useState, useCallback, useEffect} from "react";
-import DiaryCheckPopup from "../components/DiaryCheckPopup";
+import DiaryCheckPopup from "../components/DiaryCheckPopup_1";
 import PortalPopup from "../components/PortalPopup";
 import axios from 'axios';
 
@@ -15,7 +15,6 @@ const Day19Icon = ({ propTop, propLeft }) => {
   }, []);
 
   const userToken = localStorage.getItem("userToken");
-  //기분에 따른 색상 변화
   const [imageSrc, setImageSrc]=useState('/day19.svg');
 
 
@@ -27,7 +26,9 @@ const Day19Icon = ({ propTop, propLeft }) => {
         }
       })
           .then(response => {
+            //기분 상태 정보
             const mood = response.data[0].emotionStatus;
+
             //1: 슬픔, 2: 기쁨, 3: 화남
             switch(mood){
               case '슬픔':
