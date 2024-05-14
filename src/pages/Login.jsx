@@ -23,7 +23,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const response = await axios.post('http://18.211.120.39:3000/signin', formData); //서버에 데이터 전송
+      const response = await axios.post('api/signin', formData); //서버에 데이터 전송
       console.log('Sending data to server', formData); //데이터 확인
       console.log(response);
 

@@ -56,7 +56,7 @@ const Main = () => {
 
 
   useEffect(() => {
-    axios.get('http://18.211.120.39:3000/diarys', {
+    axios.get('api/diarys', {
       headers: {
         'x-access-token': userToken
       }
