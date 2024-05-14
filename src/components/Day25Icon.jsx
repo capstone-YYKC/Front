@@ -1,11 +1,10 @@
 import { useMemo } from "react";
 import styles from "./Day25Icon.module.css";
-import React, {useState, useCallback, useEffect} from "react";
-import DiaryCheckPopup from "../components/DiaryCheckPopup_7";
+import React, {memo, useState, useCallback, useEffect} from "react";
+import DiaryCheckPopup from "../components/DiaryCheckPopup_1";
 import PortalPopup from "../components/PortalPopup";
-import axios from 'axios';
 
-const Day25Icon = ({ propTop, propLeft }) => {
+const Day25Icon = memo(({ propTop, propLeft, diaryStatus }) => {
   const [isDiaryCheckPopupOpen, setDiaryCheckPopupOpen] = useState(false);
   const openDiaryCheckPopup = useCallback(() => {
     setDiaryCheckPopupOpen(true);
@@ -14,48 +13,34 @@ const Day25Icon = ({ propTop, propLeft }) => {
     setDiaryCheckPopupOpen(false);
   }, []);
 
-  const userToken = localStorage.getItem("userToken");
-  //기분에 따른 색상 변화
   const [imageSrc, setImageSrc]=useState('/day25.svg');
 
 
-  useEffect(() => {
-    async function fetchData() {
-      axios.get('http://18.211.120.39:3000/diarys', {
-        headers: {
-          'x-access-token': userToken
-        }
-      })
-          .then(response => {
-            const mood = response.data[6].emotionStatus;
-            //1: 슬픔, 2: 기쁨, 3: 화남
-            switch(mood){
-              case '슬픔':
-                setImageSrc('/day251.svg');
-                break;
-              case '행복':
-                setImageSrc('/day252.svg');
-                break;
-              case '화남':
-                setImageSrc('/day253.svg');
-                break;
-              default:
-                setImageSrc('/day25.svg');
-            }
-          }
-        );
-
-    }
-
-    fetchData();
-  }, []);
-
+  
   const day25IconStyle = useMemo(() => {
     return {
       top: propTop,
       left: propLeft,
     };
   }, [propTop, propLeft]);
+
+
+  //1: 슬픔, 2: 기쁨, 3: 화남
+  useEffect(() => {
+    switch(diaryStatus){
+      case '슬픔':
+        setImageSrc('/day251.svg');
+        break;
+      case '행복':
+        setImageSrc('/day252.svg');
+        break;
+      case '화남':
+        setImageSrc('/day253.svg');
+        break;
+      default:
+        setImageSrc('/day25.svg');
+    }
+  }, [diaryStatus]);
 
   return (
     <>
@@ -77,6 +62,6 @@ const Day25Icon = ({ propTop, propLeft }) => {
       )}
     </>
   );
-};
+});
 
 export default Day25Icon;

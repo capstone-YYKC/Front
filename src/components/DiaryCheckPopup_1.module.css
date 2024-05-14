@@ -54,26 +54,19 @@
   color: var(--color-dimgray-300);
   text-align: center;
 }
-.polygonIcon {
-  top: 21px;
-  left: 21px;
-  width: 26px;
-  height: 26px;
-  object-fit: contain;
-}
+
 .div2,
-.icon,
-.polygonIcon {
+.icon {
   position: relative;
 }
 .div2 {
-  top: -180px;
+  top: -150px;
   left: 101px;
   font-size: var(--font-size-sm);
   color: var(--color-white);
 }
 .icon {
-  top: -401px;
+  top: -368px;
   left: 388px;
   width: 225px;
   height: 329px;

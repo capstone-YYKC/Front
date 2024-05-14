@@ -29,6 +29,7 @@ import Day28Icon from "../components/Day28Icon";
 import Day29Icon from "../components/Day29Icon";
 import Day30Icon from "../components/Day30Icon";
 import Day31Icon from "../components/Day31Icon";
+import Day9Icon2 from "../components/Day9Icon";
 import Day8Icon2 from "../components/Day8Icon";
 import Day7Icon2 from "../components/Day7Icon";
 import Day6Icon2 from "../components/Day6Icon";
@@ -47,7 +48,7 @@ import { useEffect } from 'react';
 const Main = () => {
 
   const [dates, setdates] = useState([]);
-  //const [statuses, setstatuses] = useState([]);
+  const [statuses, setstatuses] = useState([]);
   
 
   const userToken = localStorage.getItem("userToken");
@@ -63,12 +64,14 @@ const Main = () => {
         .then(response => {
           console.log('일기 정보', response.data);
           const scores = response.data.map(entry => entry.emotionScore);
-          //const status = response.data.map(entry => entry.emotionStatus);
+          const status = response.data.map(entry => entry.emotionStatus);
+          console.log('test', status);
           setdates(scores);
-          
-          console.log(scores);
+          setstatuses(status);   
+          console.log('감정 점수', scores);
+          console.log('감정 상태', statuses);
         });
-  }, []);
+  }, [userToken]);
 
 
   const data = [
@@ -110,7 +113,7 @@ const Main = () => {
   return (
     <>
       <div className={styles.main}> 
-        <img className={styles.graph1Icon} alt="" src="/graph2.png" />
+        <img className={styles.graph1Icon} alt="" src="/graph.png" />
         <div className={styles.mainChild} />
         <div className={styles.div} >마이페이지</div>
         <div className={styles.div1}>마음 상담</div>
@@ -155,52 +158,53 @@ const Main = () => {
           <img className={styles.child} alt="" src="/polygon-3.svg" />
           <img className={styles.item} alt="" src="/polygon-4.svg" />
           <div className={styles.div22}>2024.05</div>          
-          <Day1Icon propTop="169px" propLeft="279px"/>          
-          <Day2Icon propTop="169px" propLeft="360px" />
-          <Day3Icon propTop="169px" propLeft="441px" />
-          <Day4Icon propTop="169px" propLeft="522px" />
-          <Day5Icon propTop="266px" propLeft="36px" />
-          <Day6Icon propTop="266px" propLeft="117px" />
-          <Day7Icon propTop="266px" propLeft="198px" />
-          <Day8Icon propTop="266px" propLeft="279px" />
-          <Day9Icon propTop="266px" propLeft="360px" />
-          <Day10Icon propTop="266px" propLeft="441px" />
-          <Day11Icon propTop="266px" propLeft="522px" />
-          <Day12Icon propTop="364px" propLeft="36px" />
-          <Day13Icon propTop="364px" propLeft="117px" />
-          <Day14Icon propTop="364px" propLeft="198px" />
-          <Day15Icon propTop="364px" propLeft="279px" />
-          <Day16Icon propTop="364px" propLeft="360px" />
-          <Day17Icon propTop="364px" propLeft="441px" />
-          <Day18Icon propTop="364px" propLeft="522px" />
-          <Day19Icon propTop="460px" propLeft="36px" />
-          <Day20Icon propTop="460px" propLeft="117px" />
-          <Day21Icon propTop="460px" propLeft="198px" />
-          <Day22Icon propTop="460px" propLeft="279px" />
-          <Day23Icon propTop="460px" propLeft="360px" />
-          <Day24Icon propTop="460px" propLeft="441px" />
-          <Day25Icon propTop="460px" propLeft="522px"/>
-          <Day26Icon propTop="557px" propLeft="36px" />
-          <Day27Icon propTop="557px" propLeft="117px" />
-          <Day28Icon propTop="557px" propLeft="198px" />
-          <Day29Icon propTop="557px" propLeft="279px" />
-          <Day30Icon propTop="557px" propLeft="360px" />
-          <Day31Icon propTop="557px" propLeft="441px" />
-          <Day1Icon2 propTop="557px" propLeft="522px" />          
-          <Day2Icon2 propTop="653px" propLeft="36px" />
-          <Day3Icon2 propTop="653px" propLeft="117px" />
-          <Day4Icon2 propTop="653px" propLeft="198px" />
-          <Day5Icon2 propTop="653px" propLeft="279px" />
-          <Day6Icon2 propTop="653px" propLeft="360px" />
-          <Day7Icon2 propTop="653px" propLeft="441px" />
-          <Day8Icon2 propTop="653px" propLeft="522px" />
-          <div className={styles.div23}>일</div>
-          <div className={styles.div24}>토</div>
-          <div className={styles.div25}>금</div>
-          <div className={styles.div26}>목</div>
-          <div className={styles.div27}>수</div>
-          <div className={styles.div28}>화</div>
-          <div className={styles.div29}>월</div>
+          <Day1Icon propTop="169px" propLeft="198px"/>          
+          <Day2Icon propTop="169px" propLeft="279px" />
+          <Day3Icon propTop="169px" propLeft="360px" />
+          <Day4Icon propTop="169px" propLeft="441px" />
+          <Day5Icon propTop="169px" propLeft="522px" />
+          <Day6Icon propTop="266px" propLeft="36px" />
+          <Day7Icon propTop="266px" propLeft="117px" />
+          <Day8Icon propTop="266px" propLeft="198px" />
+          <Day9Icon propTop="266px" propLeft="279px" />
+          <Day10Icon propTop="266px" propLeft="360px" />
+          <Day11Icon propTop="266px" propLeft="441px" />
+          <Day12Icon propTop="266px" propLeft="522px" />
+          <Day13Icon propTop="364px" propLeft="36px" />
+          <Day14Icon propTop="364px" propLeft="117px" />
+          <Day15Icon propTop="364px" propLeft="198px" />
+          <Day16Icon propTop="364px" propLeft="279px" />
+          <Day17Icon propTop="364px" propLeft="360px" />
+          <Day18Icon propTop="364px" propLeft="441px" />
+          <Day19Icon propTop="364px" propLeft="522px" />
+          <Day20Icon propTop="460px" propLeft="36px" diaryStatus={statuses[0]}/>
+          <Day21Icon propTop="460px" propLeft="117px" diaryStatus={statuses[1]}/>
+          <Day22Icon propTop="460px" propLeft="198px" diaryStatus={statuses[2]}/>
+          <Day23Icon propTop="460px" propLeft="279px" diaryStatus={statuses[3]}/>
+          <Day24Icon propTop="460px" propLeft="360px" diaryStatus={statuses[4]}/>
+          <Day25Icon propTop="460px" propLeft="441px"diaryStatus={statuses[5]}/>
+          <Day26Icon propTop="460px" propLeft="522px" diaryStatus={statuses[6]}/>
+          <Day27Icon propTop="557px" propLeft="36px" />
+          <Day28Icon propTop="557px" propLeft="117px" />
+          <Day29Icon propTop="557px" propLeft="198px" />
+          <Day30Icon propTop="557px" propLeft="279px" />
+          <Day31Icon propTop="557px" propLeft="360px" />
+          <Day1Icon2 propTop="557px" propLeft="441px" />          
+          <Day2Icon2 propTop="557px" propLeft="522px" />
+          <Day3Icon2 propTop="653px" propLeft="36px" />
+          <Day4Icon2 propTop="653px" propLeft="117px" />
+          <Day5Icon2 propTop="653px" propLeft="198px" />
+          <Day6Icon2 propTop="653px" propLeft="279px" />
+          <Day7Icon2 propTop="653px" propLeft="360px" />
+          <Day8Icon2 propTop="653px" propLeft="441px" />
+          <Day9Icon2 propTop="653px" propLeft="522px" />
+          <div className={styles.div23}>월</div>
+          <div className={styles.div24}>일</div>
+          <div className={styles.div25}>토</div>
+          <div className={styles.div26}>금</div>
+          <div className={styles.div27}>목</div>
+          <div className={styles.div28}>수</div>
+          <div className={styles.div29}>화</div>
           <div className={styles.angryColor} />
           <div className={styles.nothingColor} />
           <div className={styles.sadColor} />
@@ -212,6 +216,7 @@ const Main = () => {
           <div className={styles.div34}>날짜를 눌러 일기를 확인할 수 있어!</div>
         </div>
         <div>
+          {statuses.length > 0 && (
           <LineChart
             className={styles.Chart}
             width={776}
@@ -229,6 +234,7 @@ const Main = () => {
             <Legend />
             <Line type="monotone" dataKey="감정점수" stroke="#4B443B" activeDot={{ r: 6 }}/>
           </LineChart>
+          )}
         </div>
       </div>
     </>

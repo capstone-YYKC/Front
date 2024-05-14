@@ -8,7 +8,7 @@ const DiaryCheckPopup = () => {
   const [content, setContent]=useState('');
   //일기 요약
   //const [summary, setSummary]=useState('');
-  const summary = '오늘은 비가 와서 우울했다.'
+  const summary = '오늘은 비가 와서 우울했다.';
   //위로의 말
   const [consolation, setConsolation]=useState('');
 
@@ -40,7 +40,6 @@ const DiaryCheckPopup = () => {
       <div className={styles.diaryCheckPopupItem} />
       <div className={styles.diaryCheckPopupInner}></div>
       <div className={styles.div1}>{summary}</div>
-      <img className={styles.polygonIcon} alt="" src="/polygon-7.svg" />
       <div className={styles.div2}>{'곰곰이: '} {consolation}</div>
       <img className={styles.icon} alt="" src="/-1@2x.png" />
     </div>
