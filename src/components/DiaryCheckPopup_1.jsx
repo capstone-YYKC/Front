@@ -19,7 +19,7 @@ const DiaryCheckPopup = () => {
 
 
   useEffect(() => {
-    axios.get('api/diarys', {
+    axios.get('http://18.211.120.39:3000/diarys', {
       headers: {
         'x-access-token': userToken
       }

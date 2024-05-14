@@ -49,6 +49,9 @@ const Main = () => {
 
   const [dates, setdates] = useState([]);
   const [statuses, setstatuses] = useState([]);
+  const [contents, setcontents] = useState([]);
+  const [summaries, setsummeries] = useState([]);
+  const [consolations, setconsolations] = useState([]);
   
 
   const userToken = localStorage.getItem("userToken");
@@ -56,7 +59,7 @@ const Main = () => {
 
 
   useEffect(() => {
-    axios.get('api/diarys', {
+    axios.get('http://18.211.120.39:3000/diarys', {
       headers: {
         'x-access-token': userToken
       }
@@ -65,6 +68,9 @@ const Main = () => {
           console.log('일기 정보', response.data);
           const scores = response.data.map(entry => entry.emotionScore);
           const status = response.data.map(entry => entry.emotionStatus);
+          const content = response.data.map(entry => entry.content);
+          const summary = response.data.map(entry => entry.summary);
+          const consolation = response.data.map(entry => entry.consolation);
           console.log('test', status);
           setdates(scores);
           setstatuses(status);   
