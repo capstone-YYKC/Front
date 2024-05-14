@@ -21,7 +21,7 @@ const Day25Icon = ({ propTop, propLeft }) => {
 
   useEffect(() => {
     async function fetchData() {
-      axios.get('http://localhost:3000/diarys', {
+      axios.get('http://18.211.120.39:3000/diarys', {
         headers: {
           'x-access-token': userToken
         }

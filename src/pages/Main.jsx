@@ -46,13 +46,8 @@ import { useEffect } from 'react';
 
 const Main = () => {
 
-  const [date0, setdate0] = useState([]);
-  const [date1, setdate1] = useState([]);
-  const [date2, setdate2] = useState([]);
-  const [date3, setdate3] = useState([]);
-  const [date4, setdate4] = useState([]);
-  const [date5, setdate5] = useState([]);
-  const [date6, setdate6] = useState([]);
+  const [dates, setdates] = useState([]);
+  //const [statuses, setstatuses] = useState([]);
   
 
   const userToken = localStorage.getItem("userToken");
@@ -60,20 +55,18 @@ const Main = () => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3000/diarys', {
+    axios.get('http://18.211.120.39:3000/diarys', {
       headers: {
         'x-access-token': userToken
       }
     })
         .then(response => {
-          console.log('일기 정보', response.data)
-          setdate0(response.data[0].emotionScore);
-          setdate1(response.data[1].emotionScore);
-          setdate2(response.data[2].emotionScore);
-          setdate3(response.data[3].emotionScore);
-          setdate4(response.data[4].emotionScore);
-          setdate5(response.data[5].emotionScore);
-          setdate6(response.data[6].emotionScore);
+          console.log('일기 정보', response.data);
+          const scores = response.data.map(entry => entry.emotionScore);
+          //const status = response.data.map(entry => entry.emotionStatus);
+          setdates(scores);
+          
+          console.log(scores);
         });
   }, []);
 
@@ -81,31 +74,31 @@ const Main = () => {
   const data = [
     {
       day: "5/19",
-      감정점수: date0
+      감정점수: dates[0]
     },
     {
       day: "5/20",
-      감정점수: date1
+      감정점수: dates[1]
     },
     {
       day: "5/21",
-      감정점수: date2
+      감정점수: dates[2]
     },
     {
       day: "5/22",
-      감정점수: date3
+      감정점수: dates[3]
     },
     {
       day: "5/23",
-      감정점수: date4
+      감정점수: dates[4]
     },
     {
       day: "5/24",
-      감정점수: date5
+      감정점수: dates[5]
     },
     {
       day: "5/25",
-      감정점수: date6
+      감정점수: dates[6]
     }
   ];
 

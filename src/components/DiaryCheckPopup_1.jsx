@@ -7,7 +7,8 @@ const DiaryCheckPopup = () => {
   //일기 내용
   const [content, setContent]=useState('');
   //일기 요약
-  const [summary, setSummary]=useState('');
+  //const [summary, setSummary]=useState('');
+  const summary = '오늘은 비가 와서 우울했다.'
   //위로의 말
   const [consolation, setConsolation]=useState('');
 
@@ -18,15 +19,15 @@ const DiaryCheckPopup = () => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3000/diarys', {
+    axios.get('http://18.211.120.39:3000/diarys', {
       headers: {
         'x-access-token': userToken
       }
     })
         .then(response => {
            setContent(response.data[0].content); 
-           setSummary(response.data[0].summary);
-           setConsolation(response.data[0].console);
+           //setSummary(response.data[0].summary);
+           setConsolation(response.data[0].consolation);
         });
   }, []);
 
