@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import styles from "./Day30Icon.module.css";
-import React, {useState, useCallback} from "react";
+import React, {useState, useCallback, useEffect} from "react";
 import DiaryCheckPopup from "../components/DiaryCheckPopup";
 import PortalPopup from "../components/PortalPopup";
 
-const Day30Icon = ({ propTop, propLeft }) => {
+const Day30Icon = ({ propTop, propLeft, diaryStatus, diaryContent, diaryConsolation, diarySummary }) => {
   const [isDiaryCheckPopupOpen, setDiaryCheckPopupOpen] = useState(false);
   const openDiaryCheckPopup = useCallback(() => {
     setDiaryCheckPopupOpen(true);
@@ -19,12 +19,30 @@ const Day30Icon = ({ propTop, propLeft }) => {
     };
   }, [propTop, propLeft]);
 
+  const [imageSrc, setImageSrc]=useState('/day30.svg');
+  //1: 슬픔, 2: 기쁨, 3: 화남
+  useEffect(() => {
+    switch(diaryStatus){
+      case '슬픔':
+        setImageSrc('/day301.svg');
+        break;
+      case '행복':
+        setImageSrc('/day302.svg');
+        break;
+      case '화남':
+        setImageSrc('/day303.svg');
+        break;
+      default:
+        setImageSrc('/day30.svg');
+    }
+  }, [diaryStatus]);
+
   return (
     <>
       <img
         className={styles.day30Icon}
         alt=""
-        src="/day30.svg"
+        src={imageSrc}
         style={day30IconStyle}
         onClick={openDiaryCheckPopup}
       />
@@ -34,7 +52,8 @@ const Day30Icon = ({ propTop, propLeft }) => {
           placement="Centered"
           onOutsideClick={closeDiaryCheckPopup}
         >
-          <DiaryCheckPopup onClose={closeDiaryCheckPopup} />
+          <DiaryCheckPopup onClose={closeDiaryCheckPopup} diaryContent={diaryContent} diaryConsolation={diaryConsolation} diarySummary={diarySummary}
+/>
         </PortalPopup>
       )}
     </>

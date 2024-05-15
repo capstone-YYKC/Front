@@ -1,0 +1,18 @@
+.SummaryModal{
+    top: -220px;
+    left: -1px;
+    position: relative;
+    width: 473px;
+    background-color: #d1c7b1;
+    height: 130px;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+    text-align: left;
+    padding: 10px;
+    font-size: var(--font-size-5xl);
+    color: var(--color-dimgray-200);
+    font-family: var(--font-s-core-dream);
+    border-radius: var(--br-3xs);
+    overflow-y: auto;
+}

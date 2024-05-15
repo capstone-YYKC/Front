@@ -4,7 +4,7 @@ import React, {memo, useState, useCallback, useEffect} from "react";
 import DiaryCheckPopup from "../components/DiaryCheckPopup_1";
 import PortalPopup from "../components/PortalPopup";
 
-const Day26Icon = memo(({ propTop, propLeft, diaryStatus }) => {
+const Day26Icon = memo(({ propTop, propLeft, diaryStatus, diaryConsolation, diaryContent, diarySummary }) => {
   const [isDiaryCheckPopupOpen, setDiaryCheckPopupOpen] = useState(false);
   const openDiaryCheckPopup = useCallback(() => {
     setDiaryCheckPopupOpen(true);
@@ -57,7 +57,7 @@ const Day26Icon = memo(({ propTop, propLeft, diaryStatus }) => {
           placement="Centered"
           onOutsideClick={closeDiaryCheckPopup}
         >
-          <DiaryCheckPopup onClose={closeDiaryCheckPopup} />
+          <DiaryCheckPopup onClose={closeDiaryCheckPopup}  diaryContent={diaryContent} diaryConsolation={diaryConsolation} diarySummary={diarySummary}/>
         </PortalPopup>
       )}
     </>

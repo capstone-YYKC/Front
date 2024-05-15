@@ -52,6 +52,8 @@ const Main = () => {
   const [contents, setcontents] = useState([]);
   const [summaries, setsummeries] = useState([]);
   const [consolations, setconsolations] = useState([]);
+  //const [Month, setMonth] = useState([]);
+  //const [Day, setDay] = useState([]);
   
 
   const userToken = localStorage.getItem("userToken");
@@ -66,47 +68,55 @@ const Main = () => {
     })
         .then(response => {
           console.log('일기 정보', response.data);
-          const scores = response.data.map(entry => entry.emotionScore);
-          const status = response.data.map(entry => entry.emotionStatus);
-          const content = response.data.map(entry => entry.content);
-          const summary = response.data.map(entry => entry.summary);
-          const consolation = response.data.map(entry => entry.consolation);
-          console.log('test', status);
-          setdates(scores);
-          setstatuses(status);   
-          console.log('감정 점수', scores);
-          console.log('감정 상태', statuses);
+          // const scores = response.data.map(entry => entry.emotionScore);
+          // const status = response.data.map(entry => entry.emotionStatus);
+          // const content = response.data.map(entry => entry.content);
+          // const consolation = response.data.map(entry => entry.consolation);
+          // const days = response.data.map(entry=>entry.writeAt);
+          // const summary = response.data.map(entry => entry.summary);
+          // for(let i = 0 ; i < 7 ; i++){
+          //   const dayss = days[i];
+          //   setMonth(dayss.substring(5, 7));
+          //   setDay(dayss.substring(8, 10));
+          // }
+          // console.log('M', Month);
+          // console.log('D',Day);
+          setdates(response.data.map(entry => entry.emotionScore));
+          setstatuses(response.data.map(entry => entry.emotionStatus));   
+          setcontents(response.data.map(entry => entry.content));
+          setconsolations(response.data.map(entry => entry.consolation));
+          setsummeries(response.data.map(entry => entry.summarize));
         });
   }, [userToken]);
 
 
   const data = [
     {
-      day: "5/19",
+      day: "5/20",
       감정점수: dates[0]
     },
     {
-      day: "5/20",
+      day: "5/21",
       감정점수: dates[1]
     },
     {
-      day: "5/21",
+      day: "5/22",
       감정점수: dates[2]
     },
     {
-      day: "5/22",
+      day: "5/23",
       감정점수: dates[3]
     },
     {
-      day: "5/23",
+      day: "5/24",
       감정점수: dates[4]
     },
     {
-      day: "5/24",
+      day: "5/25",
       감정점수: dates[5]
     },
     {
-      day: "5/25",
+      day: "5/26",
       감정점수: dates[6]
     }
   ];
@@ -183,27 +193,27 @@ const Main = () => {
           <Day17Icon propTop="364px" propLeft="360px" />
           <Day18Icon propTop="364px" propLeft="441px" />
           <Day19Icon propTop="364px" propLeft="522px" />
-          <Day20Icon propTop="460px" propLeft="36px" diaryStatus={statuses[0]}/>
-          <Day21Icon propTop="460px" propLeft="117px" diaryStatus={statuses[1]}/>
-          <Day22Icon propTop="460px" propLeft="198px" diaryStatus={statuses[2]}/>
-          <Day23Icon propTop="460px" propLeft="279px" diaryStatus={statuses[3]}/>
-          <Day24Icon propTop="460px" propLeft="360px" diaryStatus={statuses[4]}/>
-          <Day25Icon propTop="460px" propLeft="441px"diaryStatus={statuses[5]}/>
-          <Day26Icon propTop="460px" propLeft="522px" diaryStatus={statuses[6]}/>
-          <Day27Icon propTop="557px" propLeft="36px" />
-          <Day28Icon propTop="557px" propLeft="117px" />
-          <Day29Icon propTop="557px" propLeft="198px" />
-          <Day30Icon propTop="557px" propLeft="279px" />
-          <Day31Icon propTop="557px" propLeft="360px" />
-          <Day1Icon2 propTop="557px" propLeft="441px" />          
-          <Day2Icon2 propTop="557px" propLeft="522px" />
-          <Day3Icon2 propTop="653px" propLeft="36px" />
-          <Day4Icon2 propTop="653px" propLeft="117px" />
-          <Day5Icon2 propTop="653px" propLeft="198px" />
-          <Day6Icon2 propTop="653px" propLeft="279px" />
-          <Day7Icon2 propTop="653px" propLeft="360px" />
-          <Day8Icon2 propTop="653px" propLeft="441px" />
-          <Day9Icon2 propTop="653px" propLeft="522px" />
+          <Day20Icon propTop="460px" propLeft="36px" diaryStatus={statuses[0]} diaryContent={contents[0]} diaryConsolation={consolations[0]} diarySummary={summaries[0]}/>
+          <Day21Icon propTop="460px" propLeft="117px" diaryStatus={statuses[1]}diaryContent={contents[1]} diaryConsolation={consolations[1]} diarySummary={summaries[1]}/>
+          <Day22Icon propTop="460px" propLeft="198px" diaryStatus={statuses[2]}diaryContent={contents[2]} diaryConsolation={consolations[2]} diarySummary={summaries[2]}/>
+          <Day23Icon propTop="460px" propLeft="279px" diaryStatus={statuses[3]}diaryContent={contents[3]} diaryConsolation={consolations[3]} diarySummary={summaries[3]}/>
+          <Day24Icon propTop="460px" propLeft="360px" diaryStatus={statuses[4]}diaryContent={contents[4]} diaryConsolation={consolations[4]} diarySummary={summaries[4]}/>
+          <Day25Icon propTop="460px" propLeft="441px"diaryStatus={statuses[5]}diaryContent={contents[5]} diaryConsolation={consolations[5]} diarySummary={summaries[5]}/>
+          <Day26Icon propTop="460px" propLeft="522px" diaryStatus={statuses[6]}diaryContent={contents[6]} diaryConsolation={consolations[6]} diarySummary={summaries[6]}/>
+          <Day27Icon propTop="557px" propLeft="36px" diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day28Icon propTop="557px" propLeft="117px" diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]} />
+          <Day29Icon propTop="557px" propLeft="198px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day30Icon propTop="557px" propLeft="279px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day31Icon propTop="557px" propLeft="360px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day1Icon2 propTop="557px" propLeft="441px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>          
+          <Day2Icon2 propTop="557px" propLeft="522px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day3Icon2 propTop="653px" propLeft="36px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day4Icon2 propTop="653px" propLeft="117px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day5Icon2 propTop="653px" propLeft="198px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day6Icon2 propTop="653px" propLeft="279px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day7Icon2 propTop="653px" propLeft="360px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day8Icon2 propTop="653px" propLeft="441px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
+          <Day9Icon2 propTop="653px" propLeft="522px"  diaryStatus={statuses[7]}diaryContent={contents[7]} diaryConsolation={consolations[7]} diarySummary={summaries[7]}/>
           <div className={styles.div23}>월</div>
           <div className={styles.div24}>일</div>
           <div className={styles.div25}>토</div>
