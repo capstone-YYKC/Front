@@ -80,7 +80,7 @@ const Main = () => {
               maxCount = countStatuses[countStatus];
               maxEmotion = countStatus;
             }else if (countStatuses[countStatus] === maxCount) {
-              maxEmotion = "보통";
+              maxEmotion = " ";
             }
           }
         
