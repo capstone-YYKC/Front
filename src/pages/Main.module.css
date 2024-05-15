@@ -241,9 +241,10 @@
 }
 .div19 {
   top: 835px;
-  left: 138px;
+  left: 104px;
 }
-.mainChild14 {
+.mainChild14,
+.mainChild40 {
   position: absolute;
   top: 685px;
   left: 327px;
@@ -251,6 +252,15 @@
   background-color: rgba(255, 252, 248, 0.6);
   width: 771px;
   height: 168px;
+}
+.mainChild40 {
+  background-color: transparent;
+  width: 731px;
+  height: 128px;
+  top: 705px;
+  left: 347px;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-300);
 }
 .div21 {
   position: absolute;

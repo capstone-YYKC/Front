@@ -1,8 +1,9 @@
 .div {
   position: relative;
   top: 21px;
-  left: 240px;
+  left: 0px;
   white-space: pre-wrap;
+  text-align: center;
 }
 
 .diaryCheckPopupChild,

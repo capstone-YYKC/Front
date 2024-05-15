@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import styles from "./Day29Icon.module.css";
 import React, {useState, useCallback, useEffect} from "react";
-import DiaryCheckPopup from "../components/DiaryCheckPopup";
+import DiaryCheckPopup from "../components/DiaryCheckPopup_1";
 import PortalPopup from "../components/PortalPopup";
 
-const Day29Icon = ({ propTop, propLeft, diaryStatus, diaryContent, diaryConsolation, diarySummary }) => {
+const Day29Icon = ({ propTop, propLeft, diaryStatus, diaryContent, diaryConsolation, diarySummary, diaryDay }) => {
   const [isDiaryCheckPopupOpen, setDiaryCheckPopupOpen] = useState(false);
   const openDiaryCheckPopup = useCallback(() => {
     setDiaryCheckPopupOpen(true);
@@ -52,7 +52,7 @@ const Day29Icon = ({ propTop, propLeft, diaryStatus, diaryContent, diaryConsolat
           placement="Centered"
           onOutsideClick={closeDiaryCheckPopup}
         >
-          <DiaryCheckPopup onClose={closeDiaryCheckPopup} diaryContent={diaryContent} diaryConsolation={diaryConsolation} diarySummary={diarySummary}/>
+          <DiaryCheckPopup onClose={closeDiaryCheckPopup} diaryContent={diaryContent} diaryConsolation={diaryConsolation} diarySummary={diarySummary} diaryDay={diaryDay}/>
         </PortalPopup>
       )}
     </>
