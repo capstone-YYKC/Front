@@ -79,10 +79,6 @@ const Main = () => {
           setsummeries(response.data.map(entry => entry.summarize));
 
           console.log(statuses);
-          const countStatuses = statuses.reduce((acc, status) => {
-            acc[status] = (acc[status] || 0) + 1;
-            return acc;
-          }, {});
           
           console.log('CS', countStatuses);
           for (const countStatus in countStatuses) {
@@ -115,7 +111,10 @@ const Main = () => {
   const sum = dates.reduce((total, date) => total + date, 0);
   const average = Math.floor(sum / dates.length);
 
-
+   const countStatuses = statuses.reduce((acc, status) => {
+    acc[status] = (acc[status] || 0) + 1;
+    return acc;
+  }, {});
 
   const data = [
     {
