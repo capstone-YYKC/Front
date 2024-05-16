@@ -104,7 +104,7 @@ const Main = () => {
         });
   }, [userToken]);
 
-  const countStauses = statuses.reduce((acc, status) => {
+  const countStatuses = statuses.reduce((acc, status) => {
    acc[status] = (acc[status] || 0) + 1;
    return acc;
   }, {});
