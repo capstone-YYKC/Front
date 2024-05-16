@@ -116,6 +116,7 @@ const Main = () => {
     return acc;
   }, {});
 
+  console.log('st',statuses);
   const data = [
     {
       day: "5/20",
