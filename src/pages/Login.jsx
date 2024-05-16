@@ -8,9 +8,13 @@ import axios from 'axios'
 const Login = () => {
   const navigate = useNavigate();
 
+  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+  const URL = `${PROXY}/signin`;
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
+
   })
 
   const handleChange = (e) => {
@@ -24,7 +28,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const response = await axios.post('https://www.teddybeardiary.store/signin', formData); //서버에 데이터 전송
+      const response = await axios.post(URL, formData); //서버에 데이터 전송
       console.log('Sending data to server', formData); //데이터 확인
       console.log(response);
 

@@ -47,6 +47,9 @@ import { useEffect } from 'react';
 
 const Main = () => {
 
+  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+  const URL = `${PROXY}/diarys`;
+
   const [dates, setdates] = useState([]);
   const [statuses, setstatuses] = useState([]);
   const [contents, setcontents] = useState([]);
@@ -62,7 +65,7 @@ const Main = () => {
 
 
   useEffect(() => {
-    axios.get('https://www.teddybeardiary.store/diarys', {
+    axios.get(URL, {
       headers: {
         'x-access-token': userToken
       }
