@@ -78,15 +78,7 @@ const Main = () => {
           setconsolations(response.data.map(entry => entry.consolation));
           setsummeries(response.data.map(entry => entry.summarize));
 
-          
-          for (const countStatus in countStatuses) {
-            if (countStatuses[countStatus] > maxCount) {
-              maxCount = countStatuses[countStatus];
-              maxEmotion = countStatus;
-            }else if (countStatuses[countStatus] === maxCount) {
-              maxEmotion = " ";
-            } 
-          }
+        
         
         
           if (maxEmotion === "화남") {
@@ -109,11 +101,21 @@ const Main = () => {
    return acc;
   }, {});
 
+  for (const countStatus in countStatuses) {
+    if (countStatuses[countStatus] > maxCount) {
+      maxCount = countStatuses[countStatus];
+      maxEmotion = countStatus;
+    }else if (countStatuses[countStatus] === maxCount) {
+      maxEmotion = " ";
+    } 
+  }
+
   const sum = dates.reduce((total, date) => total + date, 0);
   const average = Math.floor(sum / dates.length);
 
   console.log('st',statuses);
   console.log('CS', countStatuses);
+  console.log('max',maxEmotion);
 
 
   const data = [
