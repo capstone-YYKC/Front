@@ -58,7 +58,6 @@ const Main = () => {
   let maxEmotion = "";
   let maxCount = 0;
   const [MonthConsole, setMonthConsole] = useState([]);
-  const [countStatuses, setcountStatuses] = useState([]);
  
 
   const userToken = localStorage.getItem("userToken");
@@ -79,11 +78,6 @@ const Main = () => {
           setconsolations(response.data.map(entry => entry.consolation));
           setsummeries(response.data.map(entry => entry.summarize));
 
-          const countSt = statuses.reduce((acc, status) => {
-           acc[status] = (acc[status] || 0) + 1;
-           return acc;
-          }, {});
-          setcountStatuses(countst);
           
           for (const countStatus in countStatuses) {
             if (countStatuses[countStatus] > maxCount) {
@@ -110,6 +104,10 @@ const Main = () => {
         });
   }, [userToken]);
 
+  const countStauses = statuses.reduce((acc, status) => {
+   acc[status] = (acc[status] || 0) + 1;
+   return acc;
+  }, {});
 
   const sum = dates.reduce((total, date) => total + date, 0);
   const average = Math.floor(sum / dates.length);
