@@ -78,6 +78,8 @@ const Main = () => {
           setconsolations(response.data.map(entry => entry.consolation));
           setsummeries(response.data.map(entry => entry.summarize));
 
+
+          console.log(countStatuses);
           for (const countStatus in countStatuses) {
             if (countStatuses[countStatus] > maxCount) {
               maxCount = countStatuses[countStatus];
