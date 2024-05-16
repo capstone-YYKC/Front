@@ -57,7 +57,7 @@ const Main = () => {
   const [consolations, setconsolations] = useState([]);
   let maxEmotion = "";
   let maxCount = 0;
-  const MonthConsole = ' ';
+  let MonthConsole = ' ';
  
 
   const userToken = localStorage.getItem("userToken");
