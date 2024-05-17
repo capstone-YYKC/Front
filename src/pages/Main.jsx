@@ -256,7 +256,7 @@ const Main = () => {
           <div className={styles.div30}>화남</div>
           <div className={styles.div31}>슬픔</div>
           <div className={styles.div32}>행복</div>
-          <div className={styles.div33}>기록 없음</div>
+          <div className={styles.div33}>기록X, 보통통</div>
           <div className={styles.div34}>날짜를 눌러 일기를 확인할 수 있어!</div>
         </div>
         <div>
