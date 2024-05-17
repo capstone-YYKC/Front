@@ -58,10 +58,10 @@
 
 .div2,
 .icon {
-  position: relative;
+  position: absolute;
 }
 .div2 {
-  top: -150px;
+  top: 610px;
   left: 0px;
   padding-left: 100px;
   padding-right: 100px;
@@ -69,7 +69,7 @@
   color: var(--color-white);
 }
 .icon {
-  top: -368px;
+  top: 407px;
   left: 388px;
   width: 225px;
   height: 329px;
