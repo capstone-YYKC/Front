@@ -119,31 +119,31 @@ const Main = () => {
 
   const data = [
     {
-      day: "5/13",
-      감정점수: dates[4]
-    },
-    {
-      day: "5/14",
-      감정점수: dates[5]
-    },
-    {
-      day: "5/15",
-      감정점수: dates[2]
-    },
-    {
-      day: "5/16",
-      감정점수: dates[3]
-    },
-    {
-      day: "5/17",
+      day: "5/20",
       감정점수: dates[0]
     },
     {
-      day: "5/18",
+      day: "5/21",
       감정점수: dates[1]
     },
     {
-      day: "5/19",
+      day: "5/22",
+      감정점수: dates[2]
+    },
+    {
+      day: "5/23",
+      감정점수: dates[3]
+    },
+    {
+      day: "5/24",
+      감정점수: dates[4]
+    },
+    {
+      day: "5/25",
+      감정점수: dates[5]
+    },
+    {
+      day: "5/26",
       감정점수: dates[6]
     }
   ];
@@ -218,10 +218,10 @@ const Main = () => {
           <Day14Icon propTop="364px" propLeft="117px" diaryDay='5월 14일 일기'/>
           <Day15Icon propTop="364px" propLeft="198px" diaryDay='5월 15일 일기'/>
           <Day16Icon propTop="364px" propLeft="279px" diaryDay='5월 16일 일기'/>
-          <Day17Icon propTop="364px" propLeft="360px" diaryDay='5월 17일 일기'diaryStatus={statuses[0]} diaryContent={contents[0]} diaryConsolation={consolations[0]} diarySummary={summaries[0]}/>
+          <Day17Icon propTop="364px" propLeft="360px" diaryDay='5월 17일 일기'/>
           <Day18Icon propTop="364px" propLeft="441px" diaryDay='5월 18일 일기'/>
           <Day19Icon propTop="364px" propLeft="522px" diaryDay='5월 19일 일기'/>
-          <Day20Icon propTop="460px" propLeft="36px" diaryDay='5월 20일 일기'/>
+          <Day20Icon propTop="460px" propLeft="36px" diaryDay='5월 20일 일기'diaryStatus={statuses[0]} diaryContent={contents[0]} diaryConsolation={consolations[0]} diarySummary={summaries[0]}/>
           <Day21Icon propTop="460px" propLeft="117px" diaryStatus={statuses[1]}diaryContent={contents[1]} diaryConsolation={consolations[1]} diarySummary={summaries[1]} diaryDay='5월 21일 일기'/>
           <Day22Icon propTop="460px" propLeft="198px" diaryStatus={statuses[2]}diaryContent={contents[2]} diaryConsolation={consolations[2]} diarySummary={summaries[2]}diaryDay='5월 22일 일기'/>
           <Day23Icon propTop="460px" propLeft="279px" diaryStatus={statuses[3]}diaryContent={contents[3]} diaryConsolation={consolations[3]} diarySummary={summaries[3]}diaryDay='5월 23일 일기'/>
