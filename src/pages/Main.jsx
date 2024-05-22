@@ -29,15 +29,6 @@ import Day28Icon from "../components/Day28Icon";
 import Day29Icon from "../components/Day29Icon";
 import Day30Icon from "../components/Day30Icon";
 import Day31Icon from "../components/Day31Icon";
-import Day9Icon2 from "../components/Day9Icon";
-import Day8Icon2 from "../components/Day8Icon";
-import Day7Icon2 from "../components/Day7Icon";
-import Day6Icon2 from "../components/Day6Icon";
-import Day5Icon2 from "../components/Day5Icon";
-import Day4Icon2 from "../components/Day4Icon";
-import Day3Icon2 from "../components/Day3Icon";
-import Day2Icon2 from "../components/Day2Icon";
-import Day1Icon2 from "../components/Day1Icon";
 import styles from "./Main.module.css";
 import React, {useState} from "react";
 import { LineChart, Line, XAxis,Tooltip, Legend} from 'recharts';
@@ -119,31 +110,31 @@ const Main = () => {
 
   const data = [
     {
-      day: "5/20",
+      day: "5/23",
       감정점수: dates[0]
     },
     {
-      day: "5/21",
+      day: "5/24",
       감정점수: dates[1]
     },
     {
-      day: "5/22",
+      day: "5/25",
       감정점수: dates[2]
     },
     {
-      day: "5/23",
+      day: "5/26",
       감정점수: dates[3]
     },
     {
-      day: "5/24",
+      day: "5/27",
       감정점수: dates[4]
     },
     {
-      day: "5/25",
+      day: "5/28",
       감정점수: dates[5]
     },
     {
-      day: "5/26",
+      day: "5/29",
       감정점수: dates[6]
     }
   ];
@@ -221,27 +212,18 @@ const Main = () => {
           <Day17Icon propTop="364px" propLeft="360px" diaryDay='5월 17일 일기'/>
           <Day18Icon propTop="364px" propLeft="441px" diaryDay='5월 18일 일기'/>
           <Day19Icon propTop="364px" propLeft="522px" diaryDay='5월 19일 일기'/>
-          <Day20Icon propTop="460px" propLeft="36px" diaryDay='5월 20일 일기'diaryStatus={statuses[0]} diaryContent={contents[0]} diaryConsolation={consolations[0]} diarySummary={summaries[0]}/>
-          <Day21Icon propTop="460px" propLeft="117px" diaryStatus={statuses[1]}diaryContent={contents[1]} diaryConsolation={consolations[1]} diarySummary={summaries[1]} diaryDay='5월 21일 일기'/>
-          <Day22Icon propTop="460px" propLeft="198px" diaryStatus={statuses[2]}diaryContent={contents[2]} diaryConsolation={consolations[2]} diarySummary={summaries[2]}diaryDay='5월 22일 일기'/>
-          <Day23Icon propTop="460px" propLeft="279px" diaryStatus={statuses[3]}diaryContent={contents[3]} diaryConsolation={consolations[3]} diarySummary={summaries[3]}diaryDay='5월 23일 일기'/>
-          <Day24Icon propTop="460px" propLeft="360px" diaryStatus={statuses[4]}diaryContent={contents[4]} diaryConsolation={consolations[4]} diarySummary={summaries[4]}diaryDay='5월 24일 일기'/>
-          <Day25Icon propTop="460px" propLeft="441px"diaryStatus={statuses[5]}diaryContent={contents[5]} diaryConsolation={consolations[5]} diarySummary={summaries[5]}diaryDay='5월 25일 일기'/>
-          <Day26Icon propTop="460px" propLeft="522px" diaryStatus={statuses[6]}diaryContent={contents[6]} diaryConsolation={consolations[6]} diarySummary={summaries[6]}diaryDay='5월 26일 일기'/>
-          <Day27Icon propTop="557px" propLeft="36px" diaryDay='5월 27일 일기'/>
+          <Day20Icon propTop="460px" propLeft="36px" diaryDay='5월 20일 일기'/>
+          <Day21Icon propTop="460px" propLeft="117px"diaryDay='5월 21일 일기' diaryStatus={statuses[0]} diaryContent={contents[0]} diaryConsolation={consolations[0]} diarySummary={summaries[0]}/>
+          <Day22Icon propTop="460px" propLeft="198px"diaryDay='5월 22일 일기' diaryStatus={statuses[1]}diaryContent={contents[1]} diaryConsolation={consolations[1]} diarySummary={summaries[1]} />
+          <Day23Icon propTop="460px" propLeft="279px"diaryDay='5월 23일 일기' diaryStatus={statuses[2]}diaryContent={contents[2]} diaryConsolation={consolations[2]} diarySummary={summaries[2]}/>
+          <Day24Icon propTop="460px" propLeft="360px"diaryDay='5월 24일 일기' diaryStatus={statuses[3]}diaryContent={contents[3]} diaryConsolation={consolations[3]} diarySummary={summaries[3]}/>
+          <Day25Icon propTop="460px" propLeft="441px"diaryDay='5월 25일 일기' diaryStatus={statuses[4]}diaryContent={contents[4]} diaryConsolation={consolations[4]} diarySummary={summaries[4]}/>
+          <Day26Icon propTop="460px" propLeft="522px"diaryDay='5월 26일 일기' diaryStatus={statuses[5]}diaryContent={contents[5]} diaryConsolation={consolations[5]} diarySummary={summaries[5]}/>
+          <Day27Icon propTop="557px" propLeft="36px" diaryDay='5월 27일 일기' diaryStatus={statuses[6]}diaryContent={contents[6]} diaryConsolation={consolations[6]} diarySummary={summaries[6]}/>
           <Day28Icon propTop="557px" propLeft="117px" diaryDay='5월 28일 일기'/>
           <Day29Icon propTop="557px" propLeft="198px" diaryDay='5월 29일 일기'/>
           <Day30Icon propTop="557px" propLeft="279px" diaryDay='5월 30일 일기'/>
           <Day31Icon propTop="557px" propLeft="360px" diaryDay='5월 31일 일기'/>
-          <Day1Icon2 propTop="557px" propLeft="441px" diaryDay='6월 1일 일기'/>          
-          <Day2Icon2 propTop="557px" propLeft="522px" diaryDay='6월 2일 일기'/>
-          <Day3Icon2 propTop="653px" propLeft="36px" diaryDay='6월 3일 일기'/>
-          <Day4Icon2 propTop="653px" propLeft="117px" diaryDay='6월 4일 일기'/>
-          <Day5Icon2 propTop="653px" propLeft="198px" diaryDay='6월 5일 일기'/>
-          <Day6Icon2 propTop="653px" propLeft="279px" diaryDay='6월 6일 일기'/>
-          <Day7Icon2 propTop="653px" propLeft="360px" diaryDay='6월 7일 일기'/>
-          <Day8Icon2 propTop="653px" propLeft="441px" diaryDay='6월 8일 일기'/>
-          <Day9Icon2 propTop="653px" propLeft="522px" diaryDay='6월 9일 일기'/>
           <div className={styles.div23}>월</div>
           <div className={styles.div24}>일</div>
           <div className={styles.div25}>토</div>
