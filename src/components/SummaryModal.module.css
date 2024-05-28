@@ -10,7 +10,7 @@
     max-height: 100%;
     text-align: left;
     padding: 10px;
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-base);
     color: var(--color-dimgray-200);
     font-family: var(--font-s-core-dream);
     border-radius: var(--br-3xs);
