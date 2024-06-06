@@ -161,7 +161,7 @@ const Main = () => {
         <div className={styles.mainChild} />
         <div className={styles.div} >마이페이지</div>
         <div className={styles.div1}>마음 상담</div>
-        <div className={styles.div2} onClick={() => navigate('/') >로그아웃</div>
+        <div className={styles.div2} onClick={() => navigate('/')} >로그아웃</div>
         <img className={styles.gomgom2Icon} alt="" src="/gomgom2.png" />
         <div className={styles.div3}>일기 친구,</div>
         <div className={styles.mainItem} />
