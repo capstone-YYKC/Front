@@ -212,8 +212,8 @@ const Main = () => {
           <Day8Icon propTop="266px" propLeft="441px" diaryDay='6월 8일 일기'diaryStatus={statuses[2]}diaryContent={contents[2]} diaryConsolation={consolations[2]} diarySummary={summaries[2]}/>
           <Day9Icon propTop="266px" propLeft="522px" diaryDay='6월 9일 일기'diaryStatus={statuses[3]}diaryContent={contents[3]} diaryConsolation={consolations[3]} diarySummary={summaries[3]}/>
           <Day10Icon propTop="364px" propLeft="36px" diaryDay='6월 10일 일기'diaryStatus={statuses[4]} diaryContent={contents[4]} diaryConsolation={consolations[4]} diarySummary={summaries[4]}/>
-          <Day11Icon propTop="364px" propLeft="117px" diaryDay='6월 11일 일기'diaryStatus={statuses[6]} diaryContent={contents[6]} diaryConsolation={consolations[6]} diarySummary={summaries[6]}/>
-          <Day12Icon propTop="364px" propLeft="198px" diaryDay='6월 12일 일기'/>
+          <Day11Icon propTop="364px" propLeft="117px" diaryDay='6월 11일 일기'diaryStatus={statuses[5]} diaryContent={contents[5]} diaryConsolation={consolations[5]} diarySummary={summaries[5]}/>
+          <Day12Icon propTop="364px" propLeft="198px" diaryDay='6월 12일 일기'diaryStatus={statuses[6]} diaryContent={contents[6]} diaryConsolation={consolations[6]} diarySummary={summaries[6]}/>
           <Day13Icon propTop="364px" propLeft="279px" diaryDay='6월 13일 일기'/>
           <Day14Icon propTop="364px" propLeft="360px" diaryDay='6월 14일 일기'/>
           <Day15Icon propTop="364px" propLeft="441px" diaryDay='6월 15일 일기'/>
