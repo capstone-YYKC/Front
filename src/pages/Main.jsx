@@ -51,6 +51,7 @@ const Main = () => {
   const URL = `${PROXY}/diarys`;
   const navigate = useNavigate();
 
+  const [blank, setblank] = useState([]);
   const [dates, setdates] = useState([]);
   const [statuses, setstatuses] = useState([]);
   const [contents, setcontents] = useState([]);
@@ -123,19 +124,19 @@ const Main = () => {
   const data = [
     {
       day: "6/10",
-      감정점수: 
+      감정점수: blank[0]
     },
     {
       day: "6/11",
-      감정점수: 
+      감정점수: blank[0]
     },
     {
       day: "6/12",
-      감정점수: 
+      감정점수: blank[0]
     },
     {
       day: "6/13",
-      감정점수: 
+      감정점수: blank[0]
     },
     {
       day: "6/14",
@@ -143,11 +144,11 @@ const Main = () => {
     },
     {
       day: "6/15",
-      감정점수: 
+      감정점수: blank[0]
     },
     {
       day: "6/16",
-      감정점수: 
+      감정점수: blank[0]
     }
   ];
 
