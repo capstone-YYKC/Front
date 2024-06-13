@@ -163,7 +163,7 @@ const Main = () => {
         <img className={styles.graph1Icon} alt="" src="/graph.png" />
         <div className={styles.mainChild} />
         <div className={styles.div} >마이페이지</div>
-        <div className={styles.div1} onClick={() => alert('번호')}>마음 상담</div>
+        <div className={styles.div1} onClick={() => alert('인천대학교 대학생활상담센터\n 032-835-9605\n https://www.inu.ac.kr/service/6353/subview.do')}>마음 상담</div>
         <div className={styles.div2} onClick={() => navigate('/')} >로그아웃</div>
         <img className={styles.gomgom2Icon} alt="" src="/gomgom2.png" />
         <div className={styles.div3}>일기 친구,</div>
