@@ -123,31 +123,31 @@ const Main = () => {
   const data = [
     {
       day: "6/10",
-      감정점수: dates[4]
+      감정점수: 
     },
     {
       day: "6/11",
-      감정점수: dates[1]
+      감정점수: 
     },
     {
       day: "6/12",
-      감정점수: dates[2]
+      감정점수: 
     },
     {
       day: "6/13",
-      감정점수: dates[3]
+      감정점수: 
     },
     {
       day: "6/14",
-      감정점수: dates[0]
+      감정점수: dates[latestIndex]
     },
     {
       day: "6/15",
-      감정점수: dates[5]
+      감정점수: 
     },
     {
       day: "6/16",
-      감정점수: dates[6]
+      감정점수: 
     }
   ];
 
@@ -217,8 +217,8 @@ const Main = () => {
           <Day10Icon propTop="364px" propLeft="36px" diaryDay='6월 10일 일기'/>
           <Day11Icon propTop="364px" propLeft="117px" diaryDay='6월 11일 일기'/>
           <Day12Icon propTop="364px" propLeft="198px" diaryDay='6월 12일 일기'/>
-          <Day13Icon propTop="364px" propLeft="279px" diaryDay='6월 13일 일기'diaryStatus={statuses[latestIndex]} diaryContent={contents[latestIndex]} diaryConsolation={consolations[latestIndex]} diarySummary={summaries[latestIndex]}/>
-          <Day14Icon propTop="364px" propLeft="360px" diaryDay='6월 14일 일기'/>
+          <Day13Icon propTop="364px" propLeft="279px" diaryDay='6월 13일 일기'/>
+          <Day14Icon propTop="364px" propLeft="360px" diaryDay='6월 14일 일기'diaryStatus={statuses[latestIndex]} diaryContent={contents[latestIndex]} diaryConsolation={consolations[latestIndex]} diarySummary={summaries[latestIndex]}/>
           <Day15Icon propTop="364px" propLeft="441px" diaryDay='6월 15일 일기'/>
           <Day16Icon propTop="364px" propLeft="522px" diaryDay='6월 16일 일기'/>
           <Day17Icon propTop="460px" propLeft="36px" diaryDay='6월 17일 일기'/>
