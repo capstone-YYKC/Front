@@ -221,7 +221,7 @@ const Main = () => {
         <div className={styles.div16}>{`화남: `}{angry}{'일'}</div>
         <div className={styles.div17}>{`슬픔: `}{sad}{'일'}</div>
         <div className={styles.div18}>{`행복: `}{happy}{'일'}</div>
-        <div className={styles.div19}>{`감정 평균 점수: `}{average}{'점'}</div>
+        <div className={styles.div19}>{`감정 평균 점수: `}{dates[latestIndex]}{'점'}</div>
         <div className={styles.div20}>
           <div className={styles.div21}>감정 달력</div>
           <img className={styles.child} alt="" src="/polygon-3.svg" />
