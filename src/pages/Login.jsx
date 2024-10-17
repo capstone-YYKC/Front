@@ -9,7 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
-  const URL = `${PROXY}/signin`;
+  const URL = `http://15.165.141.39:3306/signin`;
 
   const [formData, setFormData] = useState({
     email: '',
