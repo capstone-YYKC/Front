@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/proxy/*"
-  to = "https://www.teddybeardiary.store/:splat"
+  to = "http://15.165.141.39:3306"
   status = 200
   force = true
 
