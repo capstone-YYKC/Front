@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/proxy/*"
-  to = "http://gomgom.shop/:splat"
+  to = "https://www.gomgom.shop/:splat"
   status = 200
   force = true
 
