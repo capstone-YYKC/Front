@@ -49,7 +49,7 @@ const Main = () => {
 
   const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
   const URL = `${PROXY}/diarys`;
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const apiKey = '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';
   const ex_diary = '나 오늘 발목 치료 받고 올리브영에서 선물도 사고 노래방에서 노래도 불렀어. 발목이 많이 나아져서 좋고 올리브영에서 싸게 좋은 선물 사서 좋고 노래도 오랜만에 많이 불러서 좋았어. 용돈도 받았다? 설거지랑 청소기도 돌려서 뿌듯해. 과제도 2개나 클리어했어. 기분좋은 하루야.'
