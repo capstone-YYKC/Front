@@ -67,7 +67,7 @@
   width: 57px;
   height: 32px;
 }
-.mainChild6 {
+.mainChild1 {
   background-color: var(--color-dimgray-100);
 }
 .mainChild1,
@@ -252,6 +252,7 @@
   background-color: rgba(255, 252, 248, 0.6);
   width: 771px;
   height: 168px;
+  overflow-y: auto;
 }
 .mainChild40 {
   background-color: transparent;
