@@ -1,18 +1,9 @@
 import styles from "./DiaryCheckPopup_1.module.css";
 import axios from 'axios';
 import React, {useState, useEffect, useCallback} from 'react';
-import SummaryModal from "./SummaryModal";
-import PortalPopup from "../components/PortalPopup";
 const DiaryCheckPopup = ({diaryContent, diaryDay}) => {
 
 
-  const [isSummaryModalOpen, setSummaryModalOpen] = useState(false);
-  const openSummaryModal = useCallback(() => {
-    setSummaryModalOpen(true);
-  }, []);
-  const closeSummaryModal = useCallback(() => {
-    setSummaryModalOpen(false);
-  }, []);
 
   const [results, setResults] = useState([]);
   const [response1, setResponse1] = useState([]);
@@ -21,7 +12,7 @@ const DiaryCheckPopup = ({diaryContent, diaryDay}) => {
   const [loading2, setLoading2] = useState([]); 
 
   const ex_diary = diaryContent;
-  const apiKey = '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'
+  const apiKey = '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'
 
 
   useEffect(() => {
@@ -163,17 +154,6 @@ useEffect(() => {
           </div>
         )}
       </div>
-
-
-      {isSummaryModalOpen && (
-        <PortalPopup
-          
-          placement="Centered"
-          onOutsideClick={closeSummaryModal}
-        >
-          <SummaryModal onClose={closeSummaryModal} diarySummary={diarySummary}/>
-        </PortalPopup>
-      )}
     </div>
   );
 };
