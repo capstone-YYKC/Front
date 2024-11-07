@@ -40,11 +40,10 @@ import Day2Icon2 from "../components/Day2Icon";
 import Day1Icon2 from "../components/Day1Icon";
 import styles from "./Main.module.css";
 import React, {useState} from "react";
-import { LineChart, Line, XAxis,Tooltip, Legend} from 'recharts';
+import { BarChart, Bar, XAxis, Tooltip, Legend } from 'recharts';
 import axios from 'axios'
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-
 
 const Main = () => {
 
@@ -52,8 +51,9 @@ const Main = () => {
   const URL = `${PROXY}/diarys`;
   const navigate = useNavigate(); 
 
-  const apiKey = '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';
+  const apiKey = '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';
   const ex_diary = '나 오늘 발목 치료 받고 올리브영에서 선물도 사고 노래방에서 노래도 불렀어. 발목이 많이 나아져서 좋고 올리브영에서 싸게 좋은 선물 사서 좋고 노래도 오랜만에 많이 불러서 좋았어. 용돈도 받았다? 설거지랑 청소기도 돌려서 뿌듯해. 과제도 2개나 클리어했어. 기분좋은 하루야.'
+  const Epercent = [10, 20, 40, 30]
 
   const [dates, setdates] = useState([]);
   const [statuses, setstatuses] = useState([]);
@@ -167,37 +167,59 @@ const Main = () => {
 
   const data = [
     {
-      day: "6/6",
-      감정점수: dates[0]
+      day: "11/4",
+      보통: Epercent[0],
+      행복: Epercent[1],
+      슬픔: Epercent[2],
+      화남: Epercent[3]
     },
     {
-      day: "6/7",
-      감정점수: dates[1]
+      day: "11/5",
+      보통: Epercent[0],
+      행복: Epercent[1],
+      슬픔: Epercent[2],
+      화남: Epercent[3]
     },
     {
-      day: "6/8",
-      감정점수: dates[2]
+      day: "11/6",
+      보통: Epercent[0],
+      행복: Epercent[1],
+      슬픔: Epercent[2],
+      화남: Epercent[3]
     },
     {
-      day: "6/9",
-      감정점수: dates[3]
+      day: "11/7",
+      보통: Epercent[0],
+      행복: Epercent[1],
+      슬픔: Epercent[2],
+      화남: Epercent[3]
     },
     {
-      day: "6/10",
-      감정점수: dates[4]
+      day: "11/8",
+      보통: Epercent[0],
+      행복: Epercent[1],
+      슬픔: Epercent[2],
+      화남: Epercent[3]
     },
     {
-      day: "6/11",
-      감정점수: dates[5]
+      day: "11/9",
+      보통: Epercent[0],
+      행복: Epercent[1],
+      슬픔: Epercent[2],
+      화남: Epercent[3]
     },
     {
-      day: "6/12",
-      감정점수: dates[6]
+      day: "11/10",
+      보통: Epercent[0],
+      행복: Epercent[1],
+      슬픔: Epercent[2],
+      화남: Epercent[3]
     }
   ];
 
+  
   const formatTooltip = (value) => {
-    return `${value.toLocaleString()}점`;
+    return `${value.toLocaleString()}%`;
   };
 
 
@@ -307,25 +329,26 @@ const Main = () => {
           <div className={styles.div34}>날짜를 눌러 일기를 확인할 수 있어!</div>
         </div>
         <div>
-          {statuses.length > 0 && (
-          <LineChart
-            className={styles.Chart}
-            width={776}
+          <BarChart
+          className={styles.Chart}
+            width={800}
             height={410}
             data={data}
             margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
+              top:40,
+              right:0,
+              left:-35,
+              bottom:5,
             }}
-          > 
-            <XAxis dataKey="day" tickLine={false} stroke='' />
-            <Tooltip formatter={formatTooltip}/>
-            <Legend />
-            <Line type="monotone" dataKey="감정점수" stroke="#4B443B" activeDot={{ r: 6 }}/>
-          </LineChart>
-          )}
+            >
+              <XAxis dataKey="day" tickLine={false} stroke='' tick={{ fill: '#807160' }} />
+              <Tooltip formatter={formatTooltip}/>
+              <Legend />
+              <Bar dataKey={"화남"} stackId="a" fill="#EBA6A6" barSize={50}/>
+              <Bar dataKey={"슬픔"} stackId="a" fill="#98BCC3" barSize={50}/>
+              <Bar dataKey={"행복"} stackId="a" fill="#98C3A4" barSize={50}/>
+              <Bar dataKey={"보통"} stackId="a" fill="#D7CFC9" barSize={50}/>
+            </BarChart>
         </div>
       </div>
     </>
