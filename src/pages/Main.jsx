@@ -46,11 +46,10 @@ const Main = () => {
   const ex_diary = '나 오늘 발목 치료 받고 올리브영에서 선물도 사고 노래방에서 노래도 불렀어. 발목이 많이 나아져서 좋고 올리브영에서 싸게 좋은 선물 사서 좋고 노래도 오랜만에 많이 불러서 좋았어. 용돈도 받았다? 설거지랑 청소기도 돌려서 뿌듯해. 과제도 2개나 클리어했어. 기분좋은 하루야.'
   const Epercent = [10, 20, 40, 30]
 
-  const [dates, setdates] = useState([]);
+  const [EPercent, setEpercent] = useState([]);
   const [statuses, setstatuses] = useState([]);
   const [contents, setcontents] = useState([]);
-  const [summaries, setsummeries] = useState([]);
-  const [consolations, setconsolations] = useState([]);
+  const [date, setDate] = useState([]);
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
   //const [diary, setDiary] = useState(ex_diary);
@@ -68,12 +67,10 @@ const Main = () => {
     })
         .then(response => {
           console.log('일기 정보', response.data);
-          setdates(response.data.map(entry => entry.emotionScore));
+          setEpercent(response.data.map(entry => entry.emotionScore));
           setstatuses(response.data.map(entry => entry.emotionStatus));   
           setcontents(response.data.map(entry => entry.content));
-          setconsolations(response.data.map(entry => entry.consolation));
-          setsummeries(response.data.map(entry => entry.summarize));
-          
+          setDate(response.data.map(entry => entry.writeAt));
         });
   }, [userToken]);
 
@@ -246,13 +243,13 @@ const Main = () => {
           <Day3Icon propTop="169px" propLeft="522px" diaryDay='11월 3일 일기'/>
           <Day4Icon propTop="266px" propLeft="36px" diaryDay='11월 4일 일기'/>
           <Day5Icon propTop="266px" propLeft="117px" diaryDay='11월 5일 일기'/>
-          <Day6Icon propTop="266px" propLeft="198px" diaryDay='11월 6일 일기'diaryStatus={statuses[0]}diaryContent={contents[0]} diaryConsolation={consolations[0]} diarySummary={summaries[0]}/>
-          <Day7Icon propTop="266px" propLeft="279px" diaryDay='11월 7일 일기'diaryStatus={statuses[1]}diaryContent={contents[1]} diaryConsolation={consolations[1]} diarySummary={summaries[1]}/>
-          <Day8Icon propTop="266px" propLeft="360px" diaryDay='11월 8일 일기'diaryStatus={statuses[2]}diaryContent={contents[2]} diaryConsolation={consolations[2]} diarySummary={summaries[2]}/>
-          <Day9Icon propTop="266px" propLeft="441px" diaryDay='11월 9일 일기'diaryStatus={statuses[3]}diaryContent={contents[3]} diaryConsolation={consolations[3]} diarySummary={summaries[3]}/>
-          <Day10Icon propTop="266px" propLeft="522px" diaryDay='11월 10일 일기'diaryStatus={statuses[4]} diaryContent={contents[4]} diaryConsolation={consolations[4]} diarySummary={summaries[4]}/>
-          <Day11Icon propTop="364px" propLeft="36px" diaryDay='11월 11일 일기'diaryStatus={statuses[5]} diaryContent={contents[5]} diaryConsolation={consolations[5]} diarySummary={summaries[5]}/>
-          <Day12Icon propTop="364px" propLeft="117px" diaryDay='11월 12일 일기'diaryStatus={statuses[6]} diaryContent={contents[6]} diaryConsolation={consolations[6]} diarySummary={summaries[6]}/>
+          <Day6Icon propTop="266px" propLeft="198px" diaryDay='11월 6일 일기'/>
+          <Day7Icon propTop="266px" propLeft="279px" diaryDay='11월 7일 일기'/>
+          <Day8Icon propTop="266px" propLeft="360px" diaryDay='11월 8일 일기'/>
+          <Day9Icon propTop="266px" propLeft="441px" diaryDay='11월 9일 일기'/>
+          <Day10Icon propTop="266px" propLeft="522px" diaryDay='11월 10일 일기'/>
+          <Day11Icon propTop="364px" propLeft="36px" diaryDay='11월 11일 일기'/>
+          <Day12Icon propTop="364px" propLeft="117px" diaryDay='11월 12일 일기'/>
           <Day13Icon propTop="364px" propLeft="198px" diaryDay='11월 13일 일기'/>
           <Day14Icon propTop="364px" propLeft="279px" diaryDay='11월 14일 일기'/>
           <Day15Icon propTop="364px" propLeft="360px" diaryDay='11월 15일 일기'/>
