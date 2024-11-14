@@ -67,10 +67,10 @@ const Main = () => {
     })
         .then(response => {
           console.log('일기 정보', response.data);
-          setEpercent(response.data.map(entry => entry.emotionScore));
-          setstatuses(response.data.map(entry => entry.emotionStatus));   
-          setcontents(response.data.map(entry => entry.content));
-          setDate(response.data.map(entry => entry.writeAt));
+          setEpercent(response.data.data.map(entry => entry.emotionScore));
+          setstatuses(response.data.data.map(entry => entry.emotionStatus));   
+          setcontents(response.data.data.map(entry => entry.content));
+          setDate(response.data.data.map(entry => entry.writeAt));
         });
   }, [userToken]);
 
