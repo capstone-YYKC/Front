@@ -121,6 +121,7 @@ const Main = () => {
   }, {});
 
 
+  console.log(contents[0])
 
 
   const data = [
