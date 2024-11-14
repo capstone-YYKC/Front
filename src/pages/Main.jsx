@@ -238,7 +238,7 @@ const Main = () => {
           <img className={styles.child} alt="" src="/polygon-3.svg" />
           <img className={styles.item} alt="" src="/polygon-4.svg" />
           <div className={styles.div22}>2024.11</div>          
-          <Day1Icon propTop="169px" propLeft="360px"diaryDay='11월 1일 일기' diaryContent={ex_diary}/>          
+          <Day1Icon propTop="169px" propLeft="360px"diaryDay='11월 1일 일기' diaryContent={contents[0]}/>          
           <Day2Icon propTop="169px" propLeft="441px" diaryDay='11월 2일 일기'/>
           <Day3Icon propTop="169px" propLeft="522px" diaryDay='11월 3일 일기'/>
           <Day4Icon propTop="266px" propLeft="36px" diaryDay='11월 4일 일기'/>
