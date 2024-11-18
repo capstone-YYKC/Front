@@ -10,6 +10,40 @@ pre {
   max-width: 100%; /* 최대 너비 설정 */
 }
 
+@keyframes floatup {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes floatdown {
+  0% {
+    opacity: 1;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+.Floatup {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatup 3s linear;
+  z-index: 1;
+}
+.Floatdown {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatdown 3s linear;
+  z-index: 1;
+}
 
 .title1 {
   position: absolute;
@@ -262,5 +296,5 @@ pre {
   color: #EEE8DB;
   font-family: var(--font-s-core-dream);
   border-radius: var(--br-3xs) var(--br-3xs) var(--br-3xs) var(--br-3xs);
-
+  
 }

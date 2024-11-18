@@ -10,9 +10,60 @@ const DiaryCheckPopup = ({diaryContent, diaryDay}) => {
   const [loading1, setLoading1] = useState([]);
   const [response2, setResponse2] = useState('');
   const [loading2, setLoading2] = useState([]); 
+  const [flowers, setFlowers] = useState([]);
 
   const ex_diary = diaryContent;
   const apiKey = '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'
+  const status = '행복'
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      addflower();
+
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
+  const addflower = () => {
+    const emoji = getEmojiByStatus(status);
+    const newflower = {
+      id: Date.now(),
+      left: Math.random() * 100,
+      emoji,
+      AnimationClass: getAnimationClassByStatus(status),
+    }
+    setFlowers((prev) => [...prev, newflower]);
+
+    setTimeout(() => {
+      setFlowers((prev) => prev.filter((flower) => flower.id !== newflower.id));
+    }, 3000);
+  };
+
+  const getEmojiByStatus = (status) => {
+    switch (status) {
+      case '행복':
+        return '🌼';
+      case '슬픔':
+        return '💧';
+      case '화남':
+        return '🔥';
+      case '보통':
+        return '🌿';
+      default:
+        return '🐻'; // 기본값
+    }
+  };
+
+  const getAnimationClassByStatus = (status) => {
+    switch (status) {
+      case '화남':
+        return styles.Floatup; // 아래에서 위로 올라감
+      default:
+        return styles.Floatdown; // 기본 애니메이션
+    }
+  };
 
   console.log(ex_diary)
 
@@ -43,6 +94,7 @@ const DiaryCheckPopup = ({diaryContent, diaryDay}) => {
               }
           );
 
+
           setResponse1(result1.data.choices[0].message.content.trim());
       } catch (error) {
               console.error('Error calling OpenAI API:', error.response ? error.response.data : error.message);
@@ -55,7 +107,7 @@ const DiaryCheckPopup = ({diaryContent, diaryDay}) => {
 
     fetchData1();
 
-}, []);
+}, [ex_diary]);
 
 useEffect(() => {
   const fetchData2 = async () => {
@@ -137,6 +189,19 @@ useEffect(() => {
       <div className={styles.movie}>영화</div>
       <div className={styles.music}>음악</div>
       <div className={styles.food}>음식</div>
+      {flowers.map((flower) => (
+        <div
+          key={flower.id}
+          className={flower.AnimationClass}
+          style={{
+            left: `${flower.left}%`,
+            top: `-50px`,
+          }}
+          
+        >
+          {flower.emoji}
+        </div>
+      ))}
       <div>
         {!results || results.length === 0 ? (
           <div className={styles.loading}>loading...</div>
