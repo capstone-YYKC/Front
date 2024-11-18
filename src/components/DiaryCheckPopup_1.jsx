@@ -1,7 +1,7 @@
 import styles from "./DiaryCheckPopup_1.module.css";
 import axios from 'axios';
 import React, {useState, useEffect, useCallback} from 'react';
-const DiaryCheckPopup = ({diaryContent, diaryDay}) => {
+const DiaryCheckPopup = ({diaryContent, diaryDay, diaryStatus}) => {
 
 
 
@@ -14,7 +14,7 @@ const DiaryCheckPopup = ({diaryContent, diaryDay}) => {
 
   const ex_diary = diaryContent;
   const apiKey = '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'
-  const status = '행복'
+  const status = diaryStatus
 
   useEffect(() => {
     const interval = setInterval(() => {
