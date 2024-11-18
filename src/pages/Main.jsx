@@ -58,6 +58,8 @@ const Main = () => {
   const userToken = localStorage.getItem("userToken");
   console.log('토큰', userToken);
 
+  console.log(contents)
+
 
   useEffect(() => {
     axios.get(URL, {
