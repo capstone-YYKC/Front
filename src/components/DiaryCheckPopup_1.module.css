@@ -51,7 +51,7 @@ pre {
   left: 233px;
   white-space: pre-wrap;
   text-align: center;
-  color: #574D42;
+  color: #292622;
 }
 .title2 {
   position: absolute;
@@ -59,7 +59,7 @@ pre {
   left: 794px;
   white-space: pre-wrap;
   text-align: center;
-  color: #574D42;
+  color: #292622;
 }
 .title3 {
   position: absolute;
@@ -67,7 +67,7 @@ pre {
   left: 1349px;
   white-space: pre-wrap;
   text-align: center;
-  color: #574D42;
+  color: #292622;
 }
 
 .diaryCheckPopupChild1
@@ -189,7 +189,7 @@ pre {
   width: 15px;
   height: 18px;
   font-size: 15px;
-  color: #4B443B;
+  color: #292622;
 }
 .movie {
   position: absolute;
@@ -199,7 +199,7 @@ pre {
   width: 29px;
   height: 18px;
   font-size: 15px;
-  color: #4B443B;
+  color: #292622;
 }
 .music {
   position: absolute;
@@ -209,7 +209,7 @@ pre {
   width: 29px;
   height: 18px;
   font-size: 15px;
-  color: #4B443B;
+  color: #292622;
 }
 .food {
   position: absolute;
@@ -219,7 +219,7 @@ pre {
   width: 29px;
   height: 19px;
   font-size: 15px;
-  color: #4B443B;
+  color: #292622;
 }
 .book_title,
 .book_content,

@@ -13,10 +13,51 @@ const DiaryCheckPopup = ({diaryContent, diaryDay, diaryStatus}) => {
   const [flowers, setFlowers] = useState([]);
 
   const ex_diary = diaryContent;
+
   const apiKey = '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'
   const status = diaryStatus;
+  //const status = '슬픔';
+  
+  const themeStyles = {
+    행복: {
+      diaryCheckPopup: { backgroundColor: '#E1EFE4' },
+      diaryCheckPopupChild1: { backgroundColor: '#F7FFF9' },
+      diaryCheckPopupChild2: { backgroundColor: '#C5E1CD' },
+      diaryCheckPopupChild3: { backgroundColor: '#F7FFF9' },
+    },
+    슬픔: {
+      diaryCheckPopup: { backgroundColor: '#DDECEF' },
+      diaryCheckPopupChild1: { backgroundColor: '#EDF6F7' },
+      diaryCheckPopupChild2: { backgroundColor: '#ACD3DC' },
+      diaryCheckPopupChild3: { backgroundColor: '#EDF6F7' },
+    },
+    화남: {
+      diaryCheckPopup: { backgroundColor: '#F9EBEB' },
+      diaryCheckPopupChild1: { backgroundColor: '#FFF7F7' },
+      diaryCheckPopupChild2: { backgroundColor: '#E4B0B0' },
+      diaryCheckPopupChild3: { backgroundColor: '#FFF7F7' },
+    },
+    보통: {
+      diaryCheckPopup: { backgroundColor: '#EEE8DB' },
+      diaryCheckPopupChild1: { backgroundColor: '#FFF9F1' },
+      diaryCheckPopupChild2: { backgroundColor: '#E0D2C0' },
+      diaryCheckPopupChild3: { backgroundColor: '#FFF9F1' },
+    },
+    기본: {
+      diaryCheckPopup: { backgroundColor: '#EEE8DB' },
+      diaryCheckPopupChild1: { backgroundColor: '#FFF9F1' },
+      diaryCheckPopupChild2: { backgroundColor: '#E0D2C0' },
+      diaryCheckPopupChild3: { backgroundColor: '#FFF9F1' },
+    },
+  };
 
-  console.log(status)
+
+  const [currentTheme, setCurrentTheme] = useState(themeStyles.기본);
+  useEffect(() => {
+    setCurrentTheme(themeStyles[status] || themeStyles.기본);
+  }, [status]);
+  
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -75,7 +116,7 @@ const DiaryCheckPopup = ({diaryContent, diaryDay, diaryStatus}) => {
         return;
       }
 
-      const prompt1 = `일기 내용: ${ex_diary}\n너는 일기를 녹음하는 일기 인형 곰곰이야. 사용자가 오늘 너를 통해 일기를 작성했어. 다정한 친구처럼 반말로 오늘 일기에 대한 편지340자를 심리학적으로 도움이 되게 생성해줘. 이모지도 한두 개 넣어줘.`;
+      const prompt1 = `일기 내용: ${ex_diary}\n너는 일기를 녹음하는 일기 인형 곰곰이야. 사용자가 오늘 너를 통해 일기를 작성했어. 다정한 친구처럼 반말로 오늘 일기에 대한 편지340자를 심리학적으로 도움이 되게 생성해줘. 이모지도 한두 개 넣어줘. 만약 일기가 undefined거나 빈칸이면 '너의 하루를 들으면 편지를 전해주고 싶어져😊'라고만 말해줘 꼭`;
 
       setLoading1(true);
 
@@ -117,7 +158,7 @@ useEffect(() => {
       return;
     }
 
-    const prompt2 = `일기 내용: ${ex_diary}\n너는 일기를 녹음하는 일기 인형 곰곰이야. 사용자가 오늘 너를 통해 일기를 작성했어.\n다정한 친구처럼 반말로 오늘 일기에 대한 문화 생활(책, 영화, 음악, 음식)을 심리학적으로 도움이 되게 1개씩 추천해줘.\n형식은 다음과 같아. 글자 수 맞추고 줄바꿈도 형식에 맞춰서 꼭 써줘. 형식은 같은데 안에 내용은 일기에 맞춰 바꿔야 해.[]안에는 최대 20자이고 내용은 200자야. [달리기를 말할 때 내가 하고 싶은 이야기]\n하루키가 마라톤을 통해 자신의 생각을 정리하는 과정을 담은 에세이야. 오늘처럼 피곤한 하루를 보내고 마음을 정리할 때 읽으면 좋을 것 같아.\n\n[윌터의 상상은 현실이 된다(The Secret Life of Walter Mitty, 2013)]\n윌터가 일상에서 벗어나 모험을 떠나는 이야기를 다룬 영화야. 오늘처럼 지친 날에 보면 영감을 줄 수 있고, 마음에 따뜻한 위로를 줄거야.\n\n[Billie Eilish - everything I wanted]\n몽환적인 분위기와 편안한 멜로디가 마음을 차분하게 해줘. 슬플 때 들으면 감정을 달래주는 느낌이 들거야.\n\n[따뜻한 스프]\n오늘은 피곤하고 마음이 좀 지쳤으니까, 따뜻하고 부드러운 크림 스프나 미소 된장국 같은 걸로 몸과 마음을 편안하게 해주면 좋을 것 같아, 배도 든든하게 채우고 마음도 안정시켜줘!`;
+    const prompt2 = `일기가 비워져 있으면 와우!만 보내. 일기 내용: ${ex_diary}\n다정한 친구처럼 반말로 오늘 일기에 대한 문화 생활(책, 영화, 음악, 음식)을 심리학적으로 도움이 되게 1개씩 추천해줘. 형식은 다음과 같아. 글자 수 맞추고 줄바꿈도 형식에 맞춰서 꼭 써줘. 형식은 같은데 안에 내용은 일기에 맞춰 바꿔야 해.[]안에는 최대 20자이고 내용은 200자야. [달리기를 말할 때 내가 하고 싶은 이야기]하루키가 마라톤을 통해 자신의 생각을 정리하는 과정을 담은 에세이야. 오늘처럼 피곤한 하루를 보내고 마음을 정리할 때 읽으면 좋을 것 같아. [윌터의 상상은 현실이 된다(2013)]윌터가 일상에서 벗어나 모험을 떠나는 이야기를 다룬 영화야. 오늘처럼 지친 날에 보면 영감을 줄 수 있고, 마음에 따뜻한 위로를 줄거야. [Billie Eilish - everything I wanted]몽환적인 분위기와 편안한 멜로디가 마음을 차분하게 해줘. 슬플 때 들으면 감정을 달래주는 느낌이 들거야.[따뜻한 스프]오늘은 피곤하고 마음이 좀 지쳤으니까, 따뜻하고 부드러운 크림 스프나 미소 된장국 같은 걸로 몸과 마음을 편안하게 해주면 좋을 것 같아, 배도 든든하게 채우고 마음도 안정시켜줘!`;
 
     setLoading2(true);
 
@@ -149,7 +190,7 @@ useEffect(() => {
 
   fetchData2();
 
-}, []);
+}, [ex_diary]);
 
 useEffect(() => {
   if(response2){
@@ -167,18 +208,19 @@ useEffect(() => {
 }, [response2]);
 
 
-
-
   return (
-    <div className={styles.diaryCheckPopup}>
+    <div
+      className={styles.diaryCheckPopup}
+      style={currentTheme.diaryCheckPopup}
+    >
       <div className={styles.title1}>{diaryDay}</div>
       <div className={styles.title2}>곰곰이의 편지</div>
       <div className={styles.title3}>곰곰이의 추천!</div>
-      <div className={styles.diaryCheckPopupChild1}></div>
+      <div className={styles.diaryCheckPopupChild1} style={currentTheme.diaryCheckPopupChild1}></div>
       <div className={styles.diaryCheckPopupChild1_content}>{ex_diary}</div>
-      <div className={styles.diaryCheckPopupChild2}></div>
+      <div className={styles.diaryCheckPopupChild2} style={currentTheme.diaryCheckPopupChild2}> </div>
       <div className={styles.diaryCheckPopupChild2_content}>{loading1 ? 'loading...' : response1}</div>
-      <div className={styles.diaryCheckPopupChild3}></div>
+      <div className={styles.diaryCheckPopupChild3} style={currentTheme.diaryCheckPopupChild3}></div>
       <div className={styles.diaryCheckPopupChild3_content}></div>
       <div className={styles.content}>{diaryContent}</div>
       <img className={styles.gomgom} alt="" src="/-1@2x.png" />

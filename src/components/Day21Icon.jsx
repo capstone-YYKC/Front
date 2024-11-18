@@ -57,7 +57,7 @@ const Day21Icon = memo(({ propTop, propLeft, diaryStatus, diaryContent, diaryCon
           placement="Centered"
           onOutsideClick={closeDiaryCheckPopup}
         >
-          <DiaryCheckPopup onClose={closeDiaryCheckPopup}  diaryContent={diaryContent} diaryConsolation={diaryConsolation} diarySummary={diarySummary} diaryDay={diaryDay}/>
+          <DiaryCheckPopup onClose={closeDiaryCheckPopup}  diaryContent={diaryContent} diaryStatus={diaryStatus}diaryConsolation={diaryConsolation} diarySummary={diarySummary} diaryDay={diaryDay}/>
         </PortalPopup>
       )}
     </>
