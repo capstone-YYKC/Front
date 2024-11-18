@@ -52,7 +52,7 @@ const Day18Icon = ({ propTop, propLeft, diaryStatus, diaryContent, diaryConsolat
           placement="Centered"
           onOutsideClick={closeDiaryCheckPopup}
         >
-          <DiaryCheckPopup onClose={closeDiaryCheckPopup}diaryContent={diaryContent} diaryConsolation={diaryConsolation} diarySummary={diarySummary} diaryDay={diaryDay}/>
+          <DiaryCheckPopup onClose={closeDiaryCheckPopup}diaryStatus={diaryStatus} diaryContent={diaryContent} diaryConsolation={diaryConsolation} diarySummary={diarySummary} diaryDay={diaryDay}/>
         </PortalPopup>
       )}      
     </>
