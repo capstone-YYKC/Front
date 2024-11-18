@@ -126,53 +126,53 @@ const Main = () => {
 
   const data = [
     {
-      day: "11/4",
+      day: "11/18",
       보통: Epercent[0],
       행복: Epercent[1],
       슬픔: Epercent[2],
       화남: Epercent[3]
     },
     {
-      day: "11/5",
-      보통: Epercent[0],
-      행복: Epercent[1],
-      슬픔: Epercent[2],
-      화남: Epercent[3]
+      day: "11/19",
+      보통: 0,
+      행복: 0,
+      슬픔: 0,
+      화남: 0
     },
     {
-      day: "11/6",
-      보통: Epercent[0],
-      행복: Epercent[1],
-      슬픔: Epercent[2],
-      화남: Epercent[3]
+      day: "11/20",
+      보통: 0,
+      행복: 0,
+      슬픔: 0,
+      화남: 0
     },
     {
-      day: "11/7",
-      보통: Epercent[0],
-      행복: Epercent[1],
-      슬픔: Epercent[2],
-      화남: Epercent[3]
+      day: "11/21",
+      보통: 0,
+      행복: 0,
+      슬픔: 0,
+      화남: 0
     },
     {
-      day: "11/8",
-      보통: Epercent[0],
-      행복: Epercent[1],
-      슬픔: Epercent[2],
-      화남: Epercent[3]
+      day: "11/22",
+      보통: 0,
+      행복: 0,
+      슬픔: 0,
+      화남: 0
     },
     {
-      day: "11/9",
-      보통: Epercent[0],
-      행복: Epercent[1],
-      슬픔: Epercent[2],
-      화남: Epercent[3]
+      day: "11/23",
+      보통: 0,
+      행복: 0,
+      슬픔: 0,
+      화남: 0
     },
     {
-      day: "11/10",
-      보통: Epercent[0],
-      행복: Epercent[1],
-      슬픔: Epercent[2],
-      화남: Epercent[3]
+      day: "11/24",
+      보통: 0,
+      행복: 0,
+      슬픔: 0,
+      화남: 0
     }
   ];
 
