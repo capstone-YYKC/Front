@@ -16,6 +16,8 @@ const DiaryCheckPopup = ({diaryContent, diaryDay, diaryStatus}) => {
   const apiKey = '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'
   const status = diaryStatus
 
+  console.log(status)
+
   useEffect(() => {
     const interval = setInterval(() => {
       addflower();
