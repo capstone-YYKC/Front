@@ -44,7 +44,7 @@ const Main = () => {
 
   const apiKey = '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';
   //const ex_diary = '나 오늘 발목 치료 받고 올리브영에서 선물도 사고 노래방에서 노래도 불렀어. 발목이 많이 나아져서 좋고 올리브영에서 싸게 좋은 선물 사서 좋고 노래도 오랜만에 많이 불러서 좋았어. 용돈도 받았다? 설거지랑 청소기도 돌려서 뿌듯해. 과제도 2개나 클리어했어. 기분좋은 하루야.'
-  const Epercent = [10, 20, 40, 30]
+  const Epercent = [10, 0, 80, 10]
 
   const [EPercent, setEpercent] = useState([]);
   const [statuses, setstatuses] = useState([]);
@@ -85,9 +85,8 @@ const Main = () => {
         return;
       }
 
-      const allContents = contents.join('\n');
-      console.log(allContents)
-      const prompt = `일기 내용: ${allContents}\n너는 일기를 녹음하는 일기 인형 곰곰이야. 다정한 친구처럼 반말로 전체 일기들에 대한 코멘트를 심리학적으로 도움이 되게 생성해줘. 코멘트의 내용은 각 감정의 발생 비율(%)과 그에 대한 간단한 설명을 포함하고, 특정 감정이 자주 나타나는 날이나 활동에 대한 패턴도 찾아줘. 예를 들어 이 행동을 하면 기분이 좋았고, 이런 날이면 기분이 좋지 않았던 것 같은거. 사용자가 이 정보를 통해 자신의 감정 변화를 이해하고, 향후 감정 관리를 위한 팁이나 권장 사항을 500자 정도로 제공해줘. 예전 일기는 무시하고 내가 준 일기만 분석해.=`;
+      
+      const prompt = `일기 내용: ${contents}\n너는 일기를 녹음하는 일기 인형 곰곰이야. 다정한 친구처럼 반말로 전체 일기들에 대한 코멘트를 심리학적으로 도움이 되게 생성해줘. 코멘트의 내용은 각 감정의 발생 비율(%)과 그에 대한 간단한 설명을 포함하고, 특정 감정이 자주 나타나는 날이나 활동에 대한 패턴도 찾아줘. 예를 들어 이 행동을 하면 기분이 좋았고, 이런 날이면 기분이 좋지 않았던 것 같은거. 사용자가 이 정보를 통해 자신의 감정 변화를 이해하고, 향후 감정 관리를 위한 팁이나 권장 사항을 500자 정도로 제공해줘. 예전 일기는 무시하고 내가 준 일기만 분석해.=`;
 
       setLoading(true);
 
