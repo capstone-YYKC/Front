@@ -99,6 +99,21 @@ const DiaryCheckPopup = ({diaryContent, diaryDay, diaryStatus}) => {
     }
   };
 
+  const getgomgomByStatus = (status) => {
+    switch (status) {
+      case '행복':
+        return '🌼';
+      case '슬픔':
+        return '💧';
+      case '화남':
+        return '🔥';
+      case '보통':
+        return '🌿';
+      default:
+        return '🐻'; // 기본값
+    }
+  };
+
   const getAnimationClassByStatus = (status) => {
     switch (status) {
       case '화남':
@@ -107,6 +122,24 @@ const DiaryCheckPopup = ({diaryContent, diaryDay, diaryStatus}) => {
         return styles.Floatdown; // 기본 애니메이션
     }
   };
+
+  const [imageSrc, setImageSrc]=useState('/gomgom.png');
+  //1: 슬픔, 2: 기쁨, 3: 화남
+  useEffect(() => {
+    switch(status){
+      case '슬픔':
+        setImageSrc('/gomgom_sad.png');
+        break;
+      case '행복':
+        setImageSrc('/gomgom_happy.png');
+        break;
+      case '화남':
+        setImageSrc('/gomgom_angry.png');
+        break;
+      default:
+        setImageSrc('/gomgom.png');
+    }
+  }, [status]);
 
 
   useEffect(() => {
@@ -222,8 +255,7 @@ useEffect(() => {
       <div className={styles.diaryCheckPopupChild2_content}>{loading1 ? 'loading...' : response1}</div>
       <div className={styles.diaryCheckPopupChild3} style={currentTheme.diaryCheckPopupChild3}></div>
       <div className={styles.diaryCheckPopupChild3_content}></div>
-      <div className={styles.content}>{diaryContent}</div>
-      <img className={styles.gomgom} alt="" src="/-1@2x.png" />
+      <img className={styles.gomgom} alt="" src={imageSrc} />
       <img className={styles.gomgom_book} alt="" src="/book_gomgom 1.png" />
       <img className={styles.gomgom_music} alt="" src="/music_gomgom 1.png" />
       <img className={styles.gomgom_movie} alt="" src="/movie_gomgom 1.png" />
