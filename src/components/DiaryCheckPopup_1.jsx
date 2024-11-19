@@ -222,7 +222,6 @@ useEffect(() => {
       <div className={styles.diaryCheckPopupChild2_content}>{loading1 ? 'loading...' : response1}</div>
       <div className={styles.diaryCheckPopupChild3} style={currentTheme.diaryCheckPopupChild3}></div>
       <div className={styles.diaryCheckPopupChild3_content}></div>
-      <div className={styles.content}>{diaryContent}</div>
       <img className={styles.gomgom} alt="" src="/-1@2x.png" />
       <img className={styles.gomgom_book} alt="" src="/book_gomgom 1.png" />
       <img className={styles.gomgom_music} alt="" src="/music_gomgom 1.png" />
