@@ -52,6 +52,10 @@ const Main = () => {
   const [date, setDate] = useState([]);
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
+  const [happy, setHappy] = useState([]);
+  const [sad, setSad] = useState([]);
+  const [angry, setAngry] = useState([]);
+  const [normal, setNormal] = useState([]);
   //const [diary, setDiary] = useState(ex_diary);
  
 
@@ -71,6 +75,10 @@ const Main = () => {
           setstatuses(response.data.data.map(entry => entry.emotionStatus));   
           setcontents(response.data.data.map(entry => entry.content));
           setDate(response.data.data.map(entry => entry.writeAt));
+          setHappy(response.data.data.map(entry => entry.행복));
+          setSad(response.data.data.map(entry => entry.슬픔));
+          setAngry(response.data.data.map(entry => entry.화남));
+          setNormal(response.data.data.map(entry => entry.보통));
         });
   }, [userToken]);
 
@@ -129,52 +137,52 @@ const Main = () => {
   const data = [
     {
       day: "11/18",
-      보통: Epercent[0],
-      행복: Epercent[1],
-      슬픔: Epercent[2],
-      화남: Epercent[3]
+      보통: normal[0],
+      행복: happy[0],
+      슬픔: sad[0],
+      화남: angry[0]
     },
     {
       day: "11/19",
-      보통: 0,
-      행복: 0,
-      슬픔: 0,
-      화남: 0
+      보통: normal[1],
+      행복: happy[1],
+      슬픔: sad[1],
+      화남: angry[1]
     },
     {
       day: "11/20",
-      보통: 0,
-      행복: 0,
-      슬픔: 0,
-      화남: 0
+      보통: normal[2],
+      행복: happy[2],
+      슬픔: sad[2],
+      화남: angry[2]
     },
     {
       day: "11/21",
-      보통: 0,
-      행복: 0,
-      슬픔: 0,
-      화남: 0
+      보통: normal[3],
+      행복: happy[3],
+      슬픔: sad[3],
+      화남: angry[3]
     },
     {
       day: "11/22",
-      보통: 0,
-      행복: 0,
-      슬픔: 0,
-      화남: 0
+      보통: normal[4],
+      행복: happy[4],
+      슬픔: sad[4],
+      화남: angry[4]
     },
     {
       day: "11/23",
-      보통: 0,
-      행복: 0,
-      슬픔: 0,
-      화남: 0
+      보통: normal[5],
+      행복: happy[5],
+      슬픔: sad[5],
+      화남: angry[5]
     },
     {
       day: "11/24",
-      보통: 0,
-      행복: 0,
-      슬픔: 0,
-      화남: 0
+      보통: normal[6],
+      행복: happy[6],
+      슬픔: sad[6],
+      화남: angry[6]
     }
   ];
 
