@@ -145,45 +145,45 @@ const Main = () => {
     },
     {
       day: "11/26",
-      보통: normal[1],
-      행복: happy[1],
-      슬픔: sad[1],
-      화남: angry[1]
+      보통: (normal[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100,
+      행복: (happy[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100,
+      슬픔: (sad[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100,
+      화남: (angry[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100
     },
     {
       day: "11/27",
-      보통: normal[2],
-      행복: happy[2],
-      슬픔: sad[2],
-      화남: angry[2]
+      보통: (normal[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100,
+      행복: (happy[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100,
+      슬픔: (sad[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100,
+      화남: (angry[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100
     },
     {
       day: "11/28",
-      보통: normal[3],
-      행복: happy[3],
-      슬픔: sad[3],
-      화남: angry[3]
+      보통: (normal[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100,
+      행복: (happy[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100,
+      슬픔: (sad[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100,
+      화남: (angry[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100
     },
     {
       day: "11/29",
-      보통: normal[4],
-      행복: happy[4],
-      슬픔: sad[4],
-      화남: angry[4]
+      보통: 0,
+      행복: 0,
+      슬픔: 0,
+      화남: 0
     },
     {
       day: "11/30",
-      보통: normal[5],
-      행복: happy[5],
-      슬픔: sad[5],
-      화남: angry[5]
+      보통: 0,
+      행복: 0,
+      슬픔: 0,
+      화남: 0
     },
     {
       day: "12/01",
-      보통: normal[6],
-      행복: happy[6],
-      슬픔: sad[6],
-      화남: angry[6]
+      보통: 0,
+      행복: 0,
+      슬픔: 0,
+      화남: 0
     }
   ];
 
