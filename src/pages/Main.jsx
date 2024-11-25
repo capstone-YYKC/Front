@@ -92,7 +92,7 @@ const Main = () => {
       }
 
       console.log(contents)
-      SUM = contents.join(" / ");
+      const SUM = contents.join(" / ");
       console.log(SUM)
       const prompt = `일기 내용: ${SUM}\n 방금 받은 일기를 전부 출력해`;
 
