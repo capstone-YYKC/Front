@@ -85,8 +85,8 @@ const Main = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if(contents==[]) {
-        setResponse('오늘의 이야기를 말해주면 분석해줄 수 있어! 언제든지 말하러 와 :)');
+      if(contents.length === 0) {
+        setResponse('여기서 일기를 분석하고 있어! 언제든지 더 말하러 와😉');
         return;
       }
 
