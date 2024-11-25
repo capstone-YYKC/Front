@@ -159,10 +159,10 @@ const Main = () => {
     },
     {
       day: "11/28",
-      보통: (normal[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100,
-      행복: (happy[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100,
-      슬픔: (sad[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100,
-      화남: (angry[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100
+      보통: (normal[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100,
+      행복: (happy[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100,
+      슬픔: (sad[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100,
+      화남: (angry[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100
     },
     {
       day: "11/29",
