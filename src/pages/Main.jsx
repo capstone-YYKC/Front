@@ -266,17 +266,17 @@ const Main = () => {
           <Day15Icon propTop="364px" propLeft="360px" diaryDay='11월 15일 일기'/>
           <Day16Icon propTop="364px" propLeft="441px" diaryDay='11월 16일 일기'/>
           <Day17Icon propTop="364px" propLeft="522px" diaryDay='11월 17일 일기'/>
-          <Day18Icon propTop="460px" propLeft="36px" diaryDay='11월 18일 일기' diaryContent={contents[0]} diaryStatus={statuses[0]}/>
-          <Day19Icon propTop="460px" propLeft="117px" diaryDay='11월 19일 일기' diaryContent={contents[1]} diaryStatus={statuses[1]}/>
-          <Day20Icon propTop="460px" propLeft="198px" diaryDay='11월 20일 일기' diaryContent={contents[2]} diaryStatus={statuses[2]}/>
-          <Day21Icon propTop="460px" propLeft="279px" diaryDay='11월 21일 일기' diaryContent={contents[3]} diaryStatus={statuses[3]}/>
-          <Day22Icon propTop="460px" propLeft="360px" diaryDay='11월 22일 일기' diaryContent={contents[4]} diaryStatus={statuses[4]}/>
-          <Day23Icon propTop="460px" propLeft="441px" diaryDay='11월 23일 일기' diaryContent={contents[5]} diaryStatus={statuses[5]}/>
-          <Day24Icon propTop="460px" propLeft="522px" diaryDay='11월 24일 일기' diaryContent={contents[6]} diaryStatus={statuses[6]}/>
-          <Day25Icon propTop="557px" propLeft="36px"diaryDay='11월 25일 일기'/>
-          <Day26Icon propTop="557px" propLeft="117px" diaryDay='11월 26일 일기'/>
-          <Day27Icon propTop="557px" propLeft="198px" diaryDay='11월 27일 일기'/>
-          <Day28Icon propTop="557px" propLeft="279px" diaryDay='11월 28일 일기'/>
+          <Day18Icon propTop="460px" propLeft="36px" diaryDay='11월 18일 일기'/>
+          <Day19Icon propTop="460px" propLeft="117px" diaryDay='11월 19일 일기'/>
+          <Day20Icon propTop="460px" propLeft="198px" diaryDay='11월 20일 일기'/>
+          <Day21Icon propTop="460px" propLeft="279px" diaryDay='11월 21일 일기'/>
+          <Day22Icon propTop="460px" propLeft="360px" diaryDay='11월 22일 일기'/>
+          <Day23Icon propTop="460px" propLeft="441px" diaryDay='11월 23일 일기'/>
+          <Day24Icon propTop="460px" propLeft="522px" diaryDay='11월 24일 일기'/>
+          <Day25Icon propTop="557px" propLeft="36px"diaryDay='11월 25일 일기'  diaryContent={contents[0]} diaryStatus={statuses[0]}/>
+          <Day26Icon propTop="557px" propLeft="117px" diaryDay='11월 26일 일기' diaryContent={contents[1]} diaryStatus={statuses[1]}/>
+          <Day27Icon propTop="557px" propLeft="198px" diaryDay='11월 27일 일기' diaryContent={contents[2]} diaryStatus={statuses[2]}/>
+          <Day28Icon propTop="557px" propLeft="279px" diaryDay='11월 28일 일기' diaryContent={contents[contents.length-1]} diaryStatus={contents.length-1}/>
           <Day29Icon propTop="557px" propLeft="360px" diaryDay='11월 29일 일기'/>
           <Day30Icon propTop="557px" propLeft="441px" diaryDay='11월 30일 일기'/>
           <div className={styles.div23}>월</div>
