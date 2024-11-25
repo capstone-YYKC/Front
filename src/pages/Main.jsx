@@ -44,7 +44,6 @@ const Main = () => {
 
   const apiKey = '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';
   //const ex_diary = '나 오늘 발목 치료 받고 올리브영에서 선물도 사고 노래방에서 노래도 불렀어. 발목이 많이 나아져서 좋고 올리브영에서 싸게 좋은 선물 사서 좋고 노래도 오랜만에 많이 불러서 좋았어. 용돈도 받았다? 설거지랑 청소기도 돌려서 뿌듯해. 과제도 2개나 클리어했어. 기분좋은 하루야.'
-  const Epercent = [10, 0, 80, 10]
 
   const [EPercent, setEpercent] = useState([]);
   const [statuses, setstatuses] = useState([]);
@@ -91,9 +90,9 @@ const Main = () => {
         return;
       }
 
-      console.log(contents)
+      console.log('일기내용', contents)
       const SUM = contents.join(" / ");
-      console.log(SUM)
+      console.log('일기전체', SUM)
       const prompt = `일기 내용: ${SUM}\n 방금 받은 일기를 전부 출력해`;
 
       setLoading(true);
@@ -126,7 +125,7 @@ const Main = () => {
 
     fetchData();
 
-}, []);
+}, [contents]);
 
   const countStatuses = statuses.reduce((acc, status) => {
    acc[status] = (acc[status] || 0) + 1;
