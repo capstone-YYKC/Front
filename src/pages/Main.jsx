@@ -125,7 +125,7 @@ const Main = () => {
 
     fetchData();
 
-}, [SUM]);
+}, [contents]);
 
   const countStatuses = statuses.reduce((acc, status) => {
    acc[status] = (acc[status] || 0) + 1;
