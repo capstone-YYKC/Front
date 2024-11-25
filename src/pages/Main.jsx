@@ -138,31 +138,31 @@ const Main = () => {
   const data = [
     {
       day: "11/25",
-      보통: (normal[0] / (normal[0] + happy[0] + sad[0] + angry[0])) * 100,
-      행복: (happy[0] / (normal[0] + happy[0] + sad[0] + angry[0])) * 100,
-      슬픔: (sad[0] / (normal[0] + happy[0] + sad[0] + angry[0])) * 100,
-      화남: (angry[0] / (normal[0] + happy[0] + sad[0] + angry[0])) * 100
+      보통: (normal[0] / (normal[0] + happy[0] + sad[0] + angry[0])) * 100 || 0,
+      행복: (happy[0] / (normal[0] + happy[0] + sad[0] + angry[0])) * 100 || 0,
+      슬픔: (sad[0] / (normal[0] + happy[0] + sad[0] + angry[0])) * 100 || 0,
+      화남: (angry[0] / (normal[0] + happy[0] + sad[0] + angry[0])) * 100 || 0
     },
     {
       day: "11/26",
-      보통: (normal[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100,
-      행복: (happy[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100,
-      슬픔: (sad[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100,
-      화남: (angry[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100
+      보통: (normal[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100 || 0,
+      행복: (happy[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100 || 0,
+      슬픔: (sad[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100 || 0,
+      화남: (angry[1] / (normal[1] + happy[1] + sad[1] + angry[1])) * 100 || 0
     },
     {
       day: "11/27",
-      보통: (normal[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100,
-      행복: (happy[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100,
-      슬픔: (sad[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100,
-      화남: (angry[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100
+      보통: (normal[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100 || 0,
+      행복: (happy[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100 || 0,
+      슬픔: (sad[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100 || 0,
+      화남: (angry[2] / (normal[2] + happy[2] + sad[2] + angry[2])) * 100 || 0
     },
     {
       day: "11/28",
-      보통: (normal[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100,
-      행복: (happy[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100,
-      슬픔: (sad[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100,
-      화남: (angry[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100
+      보통: (normal[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100 || 0,
+      행복: (happy[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100 || 0,
+      슬픔: (sad[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100 || 0,
+      화남: (angry[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100 || 0
     },
     {
       day: "11/29",
