@@ -127,10 +127,13 @@ const Main = () => {
 
 }, [contents]);
 
-  const countStatuses = statuses.reduce((acc, status) => {
-   acc[status] = (acc[status] || 0) + 1;
-   return acc;
-  }, {});
+const countStatuses = statuses.reduce((acc, status, index) => {
+  // 0부터 2까지, 그리고 배열의 길이가 4 이상일 경우 마지막 요소(index === statuses.length - 1) 포함
+  if (index <= 2 || (statuses.length > 3 && index === statuses.length - 1)) {
+    acc[status] = (acc[status] || 0) + 1;
+  }
+  return acc;
+}, {});
 
 
 
