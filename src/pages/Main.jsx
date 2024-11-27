@@ -159,10 +159,10 @@ const Main = () => {
     },
     {
       day: "11/28",
-      보통: (normal[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100 || 0,
-      행복: (happy[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100 || 0,
-      슬픔: (sad[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100 || 0,
-      화남: (angry[3] / (normal[3] + happy[3] + sad[3] + angry[3])) * 100 || 0
+      보통: (statuses.length >= 4 ? (normal[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100 : 0),
+      행복: (statuses.length >= 4 ? (happy[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100 : 0),
+      슬픔: (statuses.length >= 4 ? (sad[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100 : 0),
+      화남: (statuses.length >= 4 ? (angry[statuses.length-1] / (normal[statuses.length-1] + happy[statuses.length-1] + sad[statuses.length-1] + angry[statuses.length-1])) * 100 : 0)
     },
     {
       day: "11/29",
@@ -277,7 +277,7 @@ const Main = () => {
           <Day25Icon propTop="557px" propLeft="36px"diaryDay='11월 25일 일기'  diaryContent={contents[0]} diaryStatus={statuses[0]}/>
           <Day26Icon propTop="557px" propLeft="117px" diaryDay='11월 26일 일기' diaryContent={contents[1]} diaryStatus={statuses[1]}/>
           <Day27Icon propTop="557px" propLeft="198px" diaryDay='11월 27일 일기' diaryContent={contents[2]} diaryStatus={statuses[2]}/>
-          <Day28Icon propTop="557px" propLeft="279px" diaryDay='11월 28일 일기' diaryContent={contents[contents.length-1]} diaryStatus={contents.length-1}/>
+          <Day28Icon propTop="557px" propLeft="279px" diaryDay='11월 28일 일기' diaryContent={statuses.length >= 4 ? contents[contents.length - 1] : null} diaryStatus={statuses.length >= 4 ? statuses[statuses.length - 1] : null}/>
           <Day29Icon propTop="557px" propLeft="360px" diaryDay='11월 29일 일기'/>
           <Day30Icon propTop="557px" propLeft="441px" diaryDay='11월 30일 일기'/>
           <div className={styles.div23}>월</div>
